@@ -12,7 +12,9 @@
 
 			<!-- Tracking the default Hiro Pattern and showing a red cube-->
 			<a-marker preset='hiro'>
-				<a-box position='0 0.5 0' color="red"></a-box>
+				<a-box position='0 0.5 0' color="red">
+					<a-animation attribute="rotation" dur="500" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+				</a-box>
 
 				<a-text position='0.5 0.5 0.5' value="This is a test string."></a-text>
 				<a-entity position='-1.2 0.5 0' text="value: Hello;"></a-entity>
