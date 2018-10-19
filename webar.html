@@ -4,6 +4,7 @@
 	<!-- Loading the AR.js library based on the documentation from @jerome_etienne -->
 	<script src = "https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 	<script src = "https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+	<script src = "/src/js/events.js"></script>
 
 	<body style='margin : 0px; overflow: hidden;'>
 		
@@ -12,8 +13,8 @@
 
 				<!-- Tracking the default Hiro Pattern and showing an Icosphere-->
 				<a-marker preset='hiro'>
-					<a-entity position='0 0.5 0' scale='0.75 0.75 0.75' obj-model="obj: url(/icosphere.obj); mtl: url(/icosphere.mtl)">
-						<a-animation attribute="rotation" dur="10000" easing="linear" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+					<a-entity position='0 0.5 0' scale='0.75 0.75 0.75' obj-model="obj: url(/icosphere.obj); mtl: url(/icosphere.mtl)" markerhandler emitevents=true cursor="rayOrigin: mouse" id="animated-mesh">
+						<a-animation id="anim-property" attribute="rotation" dur="0" easing="linear" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
 					</a-entity>
 
 					<a-text position='0.5 0.5 0.5' value="This is a test string."></a-text>
