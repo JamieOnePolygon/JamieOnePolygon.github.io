@@ -1,14 +1,7 @@
-AFRAME.registerComponent('markerhandler', {
+document.querySelector("button").addEventListener("click", (e)=>
+{
+	const animationComp = document.querySelector("#anim-property");
 
-	init: function()
-	{
-		const object = document.querySelector("#animated-mesh");
+	animationComp.setAttribute('dur', 10000);
 
-		object.addEventListener('click', function(ev) {
-
-			object.object3D.visible = false;
-			//const entity = document.querySelector('#anim-property');
-
-			//entity.setAttribute('dur', 10000);
-	});
-}});
+})
