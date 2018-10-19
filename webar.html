@@ -10,22 +10,23 @@
 		<a-scene embedded arjs='sourceType: webcam;'>
 			<!-- Defining a 3D model of an Icosphere-->
 
-			<<a-marker-camera preset='hiro'>
+			<!-- Tracking the default Hiro Pattern and showing a red cube-->
+			<a-marker preset='hiro'>
 				<a-box position='0 0.5 0' color="red"></a-box>
-			</a-marker-camera>
+			</a-marker>
 
-			<a-marker-camera type='pattern' url='/1.patt'>
+			<!-- Tracking a custom Pattern and showing a Wireframe Icosphere mesh -->
+			<a-marker type='pattern' url='/1.patt'>
 				<a-entity position='0 0.5 0'
 				obj-model="obj: url(/icosphere.obj);
 				mtl: url(/icosphere.mtl)">
 				</a-entity>
-			</a-marker-camera>
 
-			<!--<a-marker-camera type='pattern' url='https://jamieonepolygon.github.io/Malware.patt'>
-				<a-sphere position='0 0.5 0' color='green'></a-sphere>
-			</a-marker-camera>-->
+				<a-text position='5 0.5 0' value="This is a test string."></a-text>
+			</a-marker>
 
-			<!--<a-entity camera></a-entity>-->
+			<!-- Adding a Simple Camera to the scene -->
+			<a-entity camera></a-entity>
 		</a-scene>		
 
 	</body>
