@@ -7,7 +7,7 @@
 
 	<body style='margin : 0px; overflow: hidden;'>
 		
-		<a-scene embedded arjs='sourceType: webcam;'>
+		<a-scene embedded arjs='sourceType: webcam; trackingMethod: best;'>
 			<!-- Defining a 3D model of an Icosphere-->
 
 			<!-- Tracking the default Hiro Pattern and showing a red cube-->
@@ -15,7 +15,7 @@
 				<a-box position='0 0.5 0' color="red"></a-box>
 
 				<a-text position='0.5 0.5 0.5' value="This is a test string."></a-text>
-				<a-entity position='0.7 0.5 0' text="value: Hello;"></a-entity>
+				<a-entity position='-1.2 0.5 0' text="value: Hello;"></a-entity>
 			</a-marker>
 
 			<!-- Tracking a custom Pattern and showing a Wireframe Icosphere mesh 
