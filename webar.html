@@ -10,20 +10,22 @@
 		<a-scene embedded arjs='sourceType: webcam;'>
 			<!-- Defining a 3D model of an Icosphere-->
 
-			<a-marker-camera preset='hiro'>
+			<a-marker preset='hiro'>
 				<a-entity
 				obj-model="obj: url(/icosphere.obj);
 				mtl: url(/icosphere.mtl)">
 				</a-entity>
-			</a-marker-camera>
+			</a-marker>
 
-			<a-marker-camera preset='kanji'>
+			<a-marker preset='kanji'>
 				<a-box position='0 0.5 0' color="blue"></a-box>
-			</a-marker-camera>
+			</a-marker>
 
 			<!--<a-marker-camera type='pattern' url='https://jamieonepolygon.github.io/Malware.patt'>
 				<a-sphere position='0 0.5 0' color='green'></a-sphere>
 			</a-marker-camera>-->
+
+			<a-entity camera></a-entity>
 		</a-scene>		
 
 	</body>
