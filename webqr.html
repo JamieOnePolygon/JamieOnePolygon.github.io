@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<script src="/src/js/html5-qrcod.js"></script>
+	<body style='margin : 0px; overflow: hidden;'>
+		<div id="reader" style="width:600;height:400px">
+			
+			$('#reader').html5_qrcode(function(data)
+			{
+				// What to do when the code is read
+			},
+			function(error)
+			{
+				// show the error
+			},
+			function(videoError)
+			{
+				// video stream couldn't be opened
+			});
+
+		</div>
+	</body>
+
+</html>
