@@ -16,7 +16,7 @@
 			<!-- Defining a 3D model of an Icosphere-->
 
 				<!-- Tracking the default Hiro Pattern and showing an Icosphere-->
-				<a-marker preset='hiro'>
+				<a-marker type='pattern' url='/logo.patt'>
 					<a-entity  markerhandler emitevents=true cursor="rayOrigin: mouse" id="animated-mesh" position='0 0.5 0' scale='0.75 0.75 0.75' obj-model="obj: url(/icosphere.obj); mtl: url(/icosphere.mtl)">
 						<a-animation id="anim-property" attribute="rotation" dur="0" easing="linear" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
 					</a-entity>
