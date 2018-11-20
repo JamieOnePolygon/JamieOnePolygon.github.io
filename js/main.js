@@ -7,7 +7,7 @@
 	// Creating the reference to hold the CraftAR image recognition
 	var imageRecognition = new craftar.CloudRecognition(
 	{
-		token: 'token=201494de3e2c48a8'
+		token: '9edb48fd94c84daa'
 	});
 
 	// Setting up events to listen for results being found, and the IR finishing
@@ -16,7 +16,7 @@
 		// Checking to see if we have found any results for the image.
 		if (response.resultd && response.results.length > 0)
 		{
-			//handleResults(response);
+			handleResults(response);
 			resultsFound = true;
 
 			// As we have found results, we want to stop the image recognition
@@ -92,7 +92,7 @@
 
 		capture.addListener('error', function(error)
 		{
-			callback(eror, capture);
+			callback(error, capture);
 		});
 
 		capture.start();
