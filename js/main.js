@@ -53,14 +53,14 @@
 					var captureDiv = document.getElementById('videoCapture');
 					captureDiv.appendChild(captureObject.domElement);
 
-					button.addListener('click', function()
-					{
+					//button.addListener('click', function()
+					//{
 						// Resetting the bool for finding results and telling CraftAR to start looking for an image.
 						foundResults = false;
-						imageRecognition.startFinder(captureObject, 500, 10);
+						imageRecognition.startFinder(captureObject, 500, -1);
 
 						alert("Started IR");
-					});
+					//});
 				}
 			});
 		}
