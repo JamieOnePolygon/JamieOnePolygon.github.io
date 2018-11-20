@@ -57,7 +57,7 @@
 					//{
 						// Resetting the bool for finding results and telling CraftAR to start looking for an image.
 						resultsFound = false;
-						imageRecognition.startFinder(captureObject, 500, -1);
+						imageRecognition.startFinder(captureObject, 500, 25);
 
 						alert("Started IR");
 					//});
@@ -75,6 +75,8 @@
 	function handleResults(results)
 	{
 		var result = results.results[0];
+
+		// Here we want to now tell the web browser to navigate to a new web page to display the image.
 
 		alert("Result found?");
 	};
