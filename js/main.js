@@ -34,6 +34,8 @@
 
 	function init()
 	{
+		var button = document.querySelector("#start");
+
 		// Checking to see if the users device supports the technology to run CraftAR
 		if (craftar.supportsCapture())
 		{
@@ -51,11 +53,14 @@
 					var captureDiv = document.getElementById('videoCapture');
 					captureDiv.appendChild(captureObject.domElement);
 
-					// Resetting the bool for finding results and telling CraftAR to start looking for an image.
-					foundResults = false;
-					imageRecognition.startFinder(captureObject, 500, 10);
+					button.addListener('click' function()
+					{
+						// Resetting the bool for finding results and telling CraftAR to start looking for an image.
+						foundResults = false;
+						imageRecognition.startFinder(captureObject, 500, 10);
 
-					alert("Started IR");
+						alert("Started IR");
+					});
 				}
 			});
 		}
