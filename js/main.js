@@ -70,7 +70,7 @@
 		}
 	};
 
-	Window.addEventListener("load", init, false);
+	window.addEventListener("load", init, false);
 
 	function handleResults(results)
 	{
