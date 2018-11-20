@@ -70,6 +70,8 @@
 		}
 	};
 
+	Window.addEventListener("load", init, false);
+
 	function handleResults(results)
 	{
 		var result = results.results[0];
