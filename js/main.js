@@ -14,7 +14,7 @@
 	imageRecognition.addListener('results', function(err, response, xhr)
 	{
 		// Checking to see if we have found any results for the image.
-		if (response.resultd && response.results.length > 0)
+		if (response.results && response.results.length > 0)
 		{
 			handleResults(response);
 			resultsFound = true;
@@ -34,12 +34,10 @@
 
 	function init()
 	{
-		var button = document.querySelector("#start");
 
 		// Checking to see if the users device supports the technology to run CraftAR
 		if (craftar.supportsCapture())
 		{
-
 			setupCapture(function(err, captureObject)
 			{
 				// Checking to see if there was an error whilst initalizing the camera.
@@ -53,18 +51,17 @@
 					var captureDiv = document.getElementById('videoCapture');
 					captureDiv.appendChild(captureObject.domElement);
 
-					//button.addListener('click', function()
-					//{
 						// Resetting the bool for finding results and telling CraftAR to start looking for an image.
-						resultsFound = false;
-						imageRecognition.startFinder(captureObject, 500, 25);
+					resultsFound = false;
+					imageRecognition.startFinder(captureObject, 500, 25);
 
-						alert("Started IR");
-					//});
+					alert("Started IR");
 				}
 			});
 		}
 		else
+
+
 		{
 			alert("Your device does not support CraftAR and Image Recognition");
 		}
