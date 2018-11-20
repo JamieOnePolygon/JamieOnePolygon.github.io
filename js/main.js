@@ -54,6 +54,8 @@
 					// Resetting the bool for finding results and telling CraftAR to start looking for an image.
 					foundResults = false;
 					imageRecognition.startFinder(captureObject, 500, 10);
+
+					alert("Started IR");
 				}
 			});
 		}
