@@ -7,7 +7,7 @@
 	// Creating the reference to hold the CraftAR image recognition
 	var imageRecognition = new craftar.CloudRecognition(
 	{
-		token: 'catchoomcooldemo'
+		token: 'token=201494de3e2c48a8'
 	});
 
 	// Setting up events to listen for results being found, and the IR finishing
@@ -77,8 +77,6 @@
 		var result = results.results[0];
 
 		alert("Result found?");
-
-		console.Writeline(result);
 	};
 
 	function setupCapture(callback)
