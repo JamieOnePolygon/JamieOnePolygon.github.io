@@ -56,7 +56,7 @@
 					//button.addListener('click', function()
 					//{
 						// Resetting the bool for finding results and telling CraftAR to start looking for an image.
-						foundResults = false;
+						resultsFound = false;
 						imageRecognition.startFinder(captureObject, 500, -1);
 
 						alert("Started IR");
