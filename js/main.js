@@ -76,7 +76,7 @@
 
 	function setupCapture(callback)
 	{
-		var capture = new craftar.Capture();
+		var capture = new craftar.Capture(document.getElementById('videoElement'));
 
 		capture.addListener('started', function()
 		{
