@@ -8,13 +8,12 @@
 	<!-- Loading the eventhandler.js script so that we can listen to events fired by the AR.js stuff-->
 	<!--<script src="./src/js/eventhandler.js"></script>-->
 
+	<!-- This registers a-markers WITH the tag 'registerevents' to emit events such as markerFound and markerLost-->
 	<script>
 		AFRAME.registerComponent('registerevents',
 		{
 			init: function()
 			{
-console.log('sanity check');
-
 				var marker = this.el;
 				marker.setAttribute('emitevents', 'true');
 
@@ -22,11 +21,7 @@ console.log('sanity check');
 				{
 					var markerID = marker.id;
 
-					alert(marker.id);
-					open('http://www.google.co.uk');
-
-					var box = document.querySelector('a-box');
-					box.setAttribute('color', 'blue');
+					window.open('http://www.google.co.uk', '_self');
 				});
 			}
 		});
