@@ -37,7 +37,7 @@ console.log('sanity check');
 		<a-scene embedded arjs='sourceType: webcam; trackingMethod: best; debugUIEnabled: false;'>
 
 				<!-- Tracking the default Hiro Pattern and showing an Icosphere-->
-				<a-marker id='hacker-attack-1' emitevents='true' preset='hiro'>
+				<a-marker id='hacker-attack-1' preset='hiro' registerevents>
 					<a-box position='0 0.5 0' color='red'></a-box>
 				</a-marker>
 
