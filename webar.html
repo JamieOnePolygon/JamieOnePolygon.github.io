@@ -9,9 +9,9 @@
 	<!--<script src="./src/js/eventhandler.js"></script>-->
 
 	<script>
-		AFRAME.registerComponent('registerevents')
+		AFRAME.registerComponent('registerevents',
 		{
-			int: function()
+			init: function()
 			{
 				var marker = this.el;
 
@@ -24,7 +24,7 @@
 					console.log('found marker', markerID);
 				});
 			}
-		}
+		});
 
 	</script>
 
