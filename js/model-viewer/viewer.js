@@ -33,8 +33,18 @@ document.body.appendChild(renderer.domElement);
 
 function createObject()
 {
+	// Here we now want to look up which model we want to display. This will be done
+	// by loading the JSON file containing all of the data for the cards.
+	var result = JSON.parse('/cards.json');
+	var match = JSON['cards'].filter(function(card)
+	 {
+	 	return card.id == 0;
+	 });
+
+	console.log(match.name);
+
 	// Now for the moment we are just going to add a sphere to render
-	var geo = new THREE.SphereGeometry(5, 32, 32);
+	var geo = new THREE.SphereGeometry(5, 12, 12);
 	var mat = new THREE.MeshStandardMaterial( {color: 0x800000 });
 
 	mesh = new THREE.Mesh(geo, mat);

@@ -1,0 +1,13 @@
+{
+	"cards": [
+		{
+			"id": 0,
+			"name": "default card",
+			"card type": "call to action",
+			"cost": "$1,000",
+			"description": "Lorum Ipsum",
+			"objective": "Use this card to affect your enemy",
+			"mesh": "/meshes/sphere.fbx" 
+		}
+	]
+}
