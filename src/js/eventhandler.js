@@ -1,6 +1,11 @@
-var marker = document.getElementById('hacker-attack-1');
+window.addEventListener('load', setupListener, false);
 
-marker.addListener('markerFound', function(event)
+function setupListener()
 {
-	alert("Found the Marker");
-});
+	var marker = document.getElementById('hacker-attack-1');
+
+	marker.addListener('markerFound', function(event)
+	{
+		alert("Found the Marker");
+	});
+}
