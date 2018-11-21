@@ -35,11 +35,12 @@ function createObject()
 {
 	// Here we now want to look up which model we want to display. This will be done
 	// by loading the JSON file containing all of the data for the cards.
-	var result = JSON.parse('/cards.json');
-	var match = JSON['cards'].filter(function(card)
-	 {
-	 	return card.id == 0;
-	 });
+	var jsonFile = $.getJSON('/cards.json');
+
+	var match = jsonFile['cards'].filter(function(card)
+	{
+		return card.id == 0;
+	});
 
 	console.log(match.name);
 
