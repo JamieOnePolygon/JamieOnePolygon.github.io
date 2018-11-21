@@ -42,6 +42,18 @@ function createObject()
 	const urlParam = new URLSearchParams(window.location.search);
 	var id = urlParam.get('id');
 
+
+	var cards = '{"cards": {"id": 0, "name": "is this working"}}';
+
+	var loading = JSON.parse(cards);
+
+	var match = loading.cards.filter(function(x)
+	{
+		return x.id == id;
+	});
+
+	console.log(match.name);
+
 	if (id == 0)
 	{
 		geo = new THREE.SphereGeometry(5, 12, 12);
