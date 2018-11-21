@@ -1,15 +1,20 @@
+// Declaring a few global variables we'll need
+var scene;
+var camera;
+var renderer;
+
 function setupScene()
 {
 	// Creating a new THREE Scene
-	var scene = new THREE.Scene();
+	scene = new THREE.Scene();
 
 	// Calculating the Aspect Ratio of the current window and creating a new
 	// perspective camera.
 	var aspect = window.innerWidth / window.innerHeight;
-	var camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
+	camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
 
 	// Creating a new renderer which will render everything
-	var renderer = new THREE.WebGLRenderer();
+	renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 
 	//Creating a directional light and adding it to the scene.
