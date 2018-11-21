@@ -14,8 +14,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Now for the moment we are just going to add a sphere to render
-var geo = new THREE.SphereGeometry(5, 32, 32);
-var mat = new THREE.MeshBasicMaterial( {color: 0xffff00});
+var geo = new THREE.SphereGeometry(1, 32, 32);
+var mat = new THREE.MeshBasicMaterial( {color: 0x00ff00});
 
 var mesh = new THREE.Mesh(geo, mat);
 //Now that we have a mesh created, we are going to add it to the scene.
@@ -28,9 +28,9 @@ mesh.rotation.x = 0.2;
 camera.position.z = 20;
 
 // Update Loop
-function update()
+function animate()
 {
-	requestAnimationFrame(update);
+	requestAnimationFrame(animate);
 
 	animateObject();
 
