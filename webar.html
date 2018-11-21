@@ -8,7 +8,7 @@
 	<!-- Loading the eventhandler.js script so that we can listen to events fired by the AR.js stuff-->
 	<script src="./src/js/eventhandler.js"></script>
 
-	<body style='margin : 0px; overflow: hidden;'>
+	<body>
 		<a-scene embedded arjs='sourceType: webcam; trackingMethod: best; debugUIEnabled: false;'>
 			<!-- Defining a 3D model of an Icosphere-->
 
@@ -16,15 +16,6 @@
 				<a-marker id='hacker-attack-1' emitevents='true' preset='hiro'>
 					<a-box position='0 0.5 0' color='red'></a-box>
 				</a-marker>
-
-				<!-- Tracking a custom Pattern and showing a Wireframe Icosphere mesh 
-				<a-marker type='pattern' url='/1.patt'>
-					<a-entity position='0 0.5 0'
-					obj-model="obj: url(/icosphere.obj);
-					mtl: url(/icosphere.mtl)">
-					</a-entity>
-				</a-marker>-->
-
 
 			<!-- Adding a Simple Camera to the scene -->
 			<a-entity camera></a-entity>
