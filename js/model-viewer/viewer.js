@@ -1,13 +1,3 @@
-setupWorld();
-
-// Adding the renderer to the body of our HTML page.
-document.body.appendChild(renderer.domElement);
-
-createObject();
-
-// Setting the Camera position
-camera.position.z = 10;
-
 function setupWorld()
 {
 	// Creating a new THREE Scene
@@ -28,20 +18,34 @@ function setupWorld()
 	scene.add(dirLight);
 }
 
+setupWorld();
+
+// Adding the renderer to the body of our HTML page.
+document.body.appendChild(renderer.domElement);
+
 function createObject()
 {
 	// Now for the moment we are just going to add a sphere to render
-var geo = new THREE.SphereGeometry(5, 32, 32);
-var mat = new THREE.MeshStandardMaterial( {color: 0x800000 });
+	var geo = new THREE.SphereGeometry(5, 32, 32);
+	var mat = new THREE.MeshStandardMaterial( {color: 0x800000 });
 
-var mesh = new THREE.Mesh(geo, mat);
-//Now that we have a mesh created, we are going to add it to the scene.
-scene.add(mesh);
+	var mesh = new THREE.Mesh(geo, mat);
+	//Now that we have a mesh created, we are going to add it to the scene.
+	scene.add(mesh);
 
-// Adding some slight rotation to the sphere
-mesh.rotation.x = 0.8;
+	// Adding some slight rotation to the sphere
+	mesh.rotation.x = 0.8;
 
 }
+
+
+createObject();
+
+const urlParam = new URLSearchParams(window.location.search);
+console.log(urlParam.get('id'));
+
+// Setting the Camera position
+camera.position.z = 10;
 
 // Update Loop
 function animate()
