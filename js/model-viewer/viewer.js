@@ -1,4 +1,4 @@
-function setupWorld()
+function setupScene()
 {
 	// Creating a new THREE Scene
 	var scene = new THREE.Scene();
@@ -18,7 +18,7 @@ function setupWorld()
 	scene.add(dirLight);
 }
 
-setupWorld();
+setupScene();
 
 // Adding the renderer to the body of our HTML page.
 document.body.appendChild(renderer.domElement);
