@@ -14,7 +14,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Now for the moment we are just going to add a sphere to render
-var geo = new THREE.BoxGeometry(1,1,1);
+var geo = new THREE.SphereGeometry(5, 32, 32);
 var mat = new THREE.MeshBasicMaterial( {color: 0x800000 });
 
 var mesh = new THREE.Mesh(geo, mat);
@@ -22,10 +22,14 @@ var mesh = new THREE.Mesh(geo, mat);
 scene.add(mesh);
 
 // Adding some slight rotation to the sphere
-mesh.rotation.x = 0.2;
+mesh.rotation.x = 0.8;
 
 // Setting the Camera position
 camera.position.z = 5;
+
+// Adding a directional light
+var dirLight = new THREE.DIRECTIONALLIGHT(0xFFDA82, 0.8);
+scene.add(dirLight);
 
 // Update Loop
 function animate()
