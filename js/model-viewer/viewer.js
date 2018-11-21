@@ -33,19 +33,24 @@ document.body.appendChild(renderer.domElement);
 
 function createObject()
 {
+	// Creating and storing a variable to hold the geometry we will populate
+	var geo;
 	// Here we now want to look up which model we want to display. This will be done
-	// by loading the JSON file containing all of the data for the cards.
-	var jsonFile = $.getJSON('/cards.json');
+	// by loading the JSON file containing all of the data for the cards in the future.
+	// For now we just use an if statement.
+	const urlParam = new URLSearchParams(window.location.search);
+	var id = urlParam.get('id');
 
-	var match = jsonFile['cards'].filter(function(card)
+	if (id == 0)
 	{
-		return card.id == 0;
-	});
-
-	console.log(match.name);
+		geo = new THREE.SphereGeometry(5, 12, 12);
+	}
+	else 
+	{
+		geo = new THREE.BoxGeometry(3, 3, 3);
+	}
 
 	// Now for the moment we are just going to add a sphere to render
-	var geo = new THREE.SphereGeometry(5, 12, 12);
 	var mat = new THREE.MeshStandardMaterial( {color: 0x800000 });
 
 	mesh = new THREE.Mesh(geo, mat);
@@ -59,9 +64,6 @@ function createObject()
 
 
 createObject();
-
-const urlParam = new URLSearchParams(window.location.search);
-console.log(urlParam.get('id'));
 
 // Setting the Camera position
 camera.position.z = 10;
