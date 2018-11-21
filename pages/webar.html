@@ -28,7 +28,12 @@
 
 					// Opening a webpage in the same window/tab. This will be changed to include 
 					// a variable instructing the model viewer to open a specific model.
-					window.open('modelv-viewer.html', '_self');
+					var pageName = 'modelv-viewer.html';
+					var parameterPrefix = '?id=';
+
+					var url = pageName + parameterPrefix + markerID;
+
+					window.open(url, '_self');
 				});
 			}
 		});
