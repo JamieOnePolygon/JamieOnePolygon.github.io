@@ -46,7 +46,7 @@ function createObject()
 	var cards = '{"cards": {"id": 0, "name": "is this working"}}';
 
 	var loading = JSON.parse(cards);
-	console.log(loading);
+	console.log(loading.cards);
 
 	//var match = loading.cards.filter(function(x)
 	//{
