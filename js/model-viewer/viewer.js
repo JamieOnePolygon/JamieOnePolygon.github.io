@@ -11,7 +11,7 @@ var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 // Adding the renderer to the body of our HTML page.
-document.body.appendChid(renderer.domElement);
+document.body.appendChild(renderer.domElement);
 
 // Now for the moment we are just going to add a sphere to render
 var geo = new THREE.SphereGeometry(5, 32, 32);
