@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Scan your card!</title>
 
-	<!-- Loading the AR.js library based on the documentation from @jerome_etienne -->
-	<script src = "https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-	<script src = "https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
-
-	<!-- Loading the eventhandler.js script so that we can listen to events fired by the AR.js stuff-->
-	<!--<script src="./src/js/eventhandler.js"></script>-->
+		<!-- Loading the AR.js library based on the documentation from @jerome_etienne -->
+		<script src = "https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+		<script src = "https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+	</head>
 
 	<!-- This registers a-markers WITH the tag 'registerevents' to emit events such as markerFound and markerLost-->
 	<script>
@@ -14,14 +14,21 @@
 		{
 			init: function()
 			{
+				// Getting the marker reference
 				var marker = this.el;
+				// Making sure that the marker emits the wanted events.
 				marker.setAttribute('emitevents', 'true');
 
+				// Registering a new function to the markerFound Event
 				marker.addEventListener('markerFound', function()
 				{
+					// We grab the id of the marker as it will contain information about what
+					// card we have scanned.
 					var markerID = marker.id;
 
-					window.open('http://www.google.co.uk', '_self');
+					// Opening a webpage in the same window/tab. This will be changed to include 
+					// a variable instructing the model viewer to open a specific model.
+					window.open('modelv-viewer.html', '_self');
 				});
 			}
 		});
@@ -31,7 +38,8 @@
 	<body>
 		<a-scene embedded arjs='sourceType: webcam; trackingMethod: best; debugUIEnabled: false;'>
 
-				<!-- Tracking the default Hiro Pattern and showing an Icosphere-->
+				<!-- Tracking the default Hiro Pattern and showing a Cube
+					 This marker is set up to emit events using the registerevents attribute -->
 				<a-marker id='hacker-attack-1' preset='hiro' registerevents>
 					<a-box position='0 0.5 0' color='red'></a-box>
 				</a-marker>
