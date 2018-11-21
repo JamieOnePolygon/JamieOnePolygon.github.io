@@ -17,16 +17,27 @@ document.body.appendChild(renderer.domElement);
 var geo = new THREE.SphereGeometry(5, 32, 32);
 var mat = new THREE.MeshBasicMaterial( {color: 0xffff00});
 
-var sphere = new THREE.Mesh(geo, mat);
+var mesh = new THREE.Mesh(geo, mat);
 //Now that we have a mesh created, we are going to add it to the scene.
-scene.add(sphere);
+scene.add(mesh);
+
+// Adding some slight rotation to the sphere
+mesh.rotation.x = 0.2;
 
 // Setting the Camera position
-camera.position.z = 10;
+camera.position.z = 20;
 
 // Update Loop
 function update()
 {
 	requestAnimationFrame(update);
+
+	animateObject();
+
 	renderer.render(scene, camera);
+}
+
+function animateObject()
+{
+	mesh.rotation.y += 0.01;
 }
