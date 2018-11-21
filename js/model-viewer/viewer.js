@@ -25,7 +25,7 @@ scene.add(mesh);
 mesh.rotation.x = 0.2;
 
 // Setting the Camera position
-camera.position.z = -5;
+camera.position.z = 5;
 
 // Update Loop
 function animate()
