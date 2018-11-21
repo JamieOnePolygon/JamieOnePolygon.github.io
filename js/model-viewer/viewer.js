@@ -37,6 +37,8 @@ function animate()
 	renderer.render(scene, camera);
 }
 
+animate();
+
 function animateObject()
 {
 	mesh.rotation.y += 0.01;
