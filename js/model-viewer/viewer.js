@@ -15,7 +15,7 @@ document.body.appendChid(renderer.domElement);
 
 // Now for the moment we are just going to add a sphere to render
 var geo = new THREE.SphereGeometry(5, 32, 32);
-var mat = new THREE.MeshBasicMaterial( {color, 0xffff00});
+var mat = new THREE.MeshBasicMaterial( {color: 0xffff00});
 
 var sphere = new THREE.Mesh(geo, mat);
 //Now that we have a mesh created, we are going to add it to the scene.
