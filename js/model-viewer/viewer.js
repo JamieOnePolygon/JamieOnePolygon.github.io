@@ -27,10 +27,6 @@ mesh.rotation.x = 0.8;
 // Setting the Camera position
 camera.position.z = 5;
 
-// Adding a directional light
-var dirLight = new THREE.DirectionalLight(0xFFDA82, 0.8);
-scene.add(dirLight);
-
 // Update Loop
 function animate()
 {
