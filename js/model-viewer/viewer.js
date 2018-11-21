@@ -48,10 +48,10 @@ function createObject()
 	var loading = JSON.parse(cards);
 	console.log(loading);
 
-	var match = loading.cards.filter(function(x)
-	{
-		return x.id == id;
-	});
+	//var match = loading.cards.filter(function(x)
+	//{
+	//	return x.id == id;
+	//});
 
 	console.log(match.name);
 
