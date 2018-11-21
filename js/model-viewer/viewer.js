@@ -1,7 +1,10 @@
-// Declaring a few global variables we'll need
-var scene;
+// Declaring a few global variables we'll need.
+var scene;			
 var camera;
 var renderer;
+
+// Decalring the mesh that we're going to display
+var mesh;
 
 function setupScene()
 {
@@ -34,7 +37,7 @@ function createObject()
 	var geo = new THREE.SphereGeometry(5, 32, 32);
 	var mat = new THREE.MeshStandardMaterial( {color: 0x800000 });
 
-	var mesh = new THREE.Mesh(geo, mat);
+	mesh = new THREE.Mesh(geo, mat);
 	//Now that we have a mesh created, we are going to add it to the scene.
 	scene.add(mesh);
 
