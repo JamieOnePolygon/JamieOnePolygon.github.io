@@ -10,6 +10,11 @@ var camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 
+//Creating a directional light and adding it to the scene.
+var dirLight = new THREE.DirectionalLight(0xFFDA82, 0.8);
+dirLight.castShadow = true;
+scene.add(dirLight);
+
 // Adding the renderer to the body of our HTML page.
 document.body.appendChild(renderer.domElement);
 
@@ -26,10 +31,6 @@ mesh.rotation.x = 0.8;
 
 // Setting the Camera position
 camera.position.z = 10;
-
-//Creating a directional light and adding it to the scene.
-var dirLight = new THREE.DirectionalLight(0xFFDA82, 0.8);
-scene.add(dirLight);
 
 // Update Loop
 function animate()
