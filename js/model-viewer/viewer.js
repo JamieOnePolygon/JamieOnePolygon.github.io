@@ -6,6 +6,33 @@ var renderer;
 // Decalring the mesh that we're going to display
 var mesh;
 
+// THE JSON DATA
+var cardDetails = 
+{
+	"cards":
+	[
+		{
+			"id": 0,
+			"filePath": "/content/models/GeoSphere.FBX",
+			"name": "Bitlocker",
+			"color": 0x800000,
+			"description": "This is a test description.",
+			"objective": "This is a test objective",
+			"cost": 100000
+		},
+		{
+			"id": 1,
+			"filePath": "/content/models/Teapot.FBX",
+			"name": "Multi-factor Authentication",
+			"color": 0x800000,
+			"description": "This is a test description.",
+			"objective": "This is a test objective",
+			"cost": 100000
+		}
+	]
+}
+
+
 function setupScene()
 {
 	// Creating a new THREE Scene
@@ -48,17 +75,22 @@ function createObject()
 
 	// Creating a FBX Model Loader object in prerperation for loading a mesh
 	var loader= new THREE.FBXLoader();
-	//loader.load()
+	loader.load(match.filePath, function(object)
+	{
+		scene.add(object);
+
+		console.log("Created object" + match.name);
+	});
 
 
-	if (id == 0)
+	/*if (id == 0)
 	{
 		geo = new THREE.SphereGeometry(5, 12, 12);
 	}
 	else 
 	{
 		geo = new THREE.BoxGeometry(3, 3, 3);
-	}
+	}*/
 
 	// Now for the moment we are just going to add a sphere to render
 	var mat = new THREE.MeshStandardMaterial( {color: 0x800000 });
