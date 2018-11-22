@@ -39,7 +39,7 @@ function createObject()
 {
 	var match = getCardDetails();
 
-	var mat = new THREE.MeshStandardMaterial( {color: match.color });
+	var mat = new THREE.MeshStandardMaterial( {color: 0x800000 });
 
 	// Creating a FBX Model Loader object in prerperation for loading a mesh
 	var loader = new THREE.FBXLoader();
@@ -105,6 +105,9 @@ createObject();
 
 // Setting the Camera position
 camera.position.z = 300;
+camera.position.y = 100;
+
+camera.lookAt(0, 0, 0);
 
 // Update Loop
 function animate()
