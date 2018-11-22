@@ -49,7 +49,8 @@ function createObject()
 	var loader= new THREE.FBXLoader();
 	loader.load(match.filePath, function(object)
 	{
-		object.mateiral.color.setHex('0x' + match.color);
+		var mat = new THREE.MeshStandardMaterial( {color: '0x' + match.color });
+		//object.mateiral.color.setHex('0x' + match.color);
 
 		mesh = object;
 
