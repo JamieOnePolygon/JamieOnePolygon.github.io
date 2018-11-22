@@ -20,7 +20,6 @@ function setupScene()
 	camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
 
 	camera.position = (0, 200, 300);
-	camera.target.position = (0, 0, 0);
 
 	// Creating a new renderer which will render everything
 	renderer = new THREE.WebGLRenderer();
@@ -114,6 +113,7 @@ function animate()
 {
 	requestAnimationFrame(animate);
 
+	camera.lookAt((0, 0, 0));
 	animateObject();
 
 	renderer.render(scene, camera);
