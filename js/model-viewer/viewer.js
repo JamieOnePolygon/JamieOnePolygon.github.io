@@ -106,14 +106,14 @@ createObject();
 // Setting the Camera position
 //camera.position.z = 300;
 
-	camera.position = (0, 200, 300);
+	camera.position = (0, 50, 300);
 
 // Update Loop
 function animate()
 {
 	requestAnimationFrame(animate);
 
-	camera.lookAt((0, 0, 0));
+	//camera.lookAt((0, 0, 0));
 	animateObject();
 
 	renderer.render(scene, camera);
