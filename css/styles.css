@@ -13,10 +13,12 @@ h1#card-name
 #card-details
 {
 	width: inherit;
-	left:33%;
-	right: 33%;
+	left:36%;
+	right: 36%;
 	min-height: 90px;
 	position: absolute;
+
+	margin-top: 5px;
 
 	background-color: rgba(0, 0, 0, 0.8);
 }
@@ -30,12 +32,15 @@ h1#card-name
 {
 	position: absolute;
 	width: 50%;
-	margin: 10px auto 0px 0px;
+	margin-left: 15px;
 }
 
 #card-level
 {
 	position: absolute;
 	width: 50%;
-	margin: 10px 0px 0px auto;
+	left: 50%;
+	margin-right: 15px;
+
+	text-align: right;
 }
