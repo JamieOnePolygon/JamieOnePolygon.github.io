@@ -61,13 +61,13 @@ h1#card-name
 #hacker-avatar
 {
 	position: absolute;
-	width: auto;
-	height: auto;
+	width: 100px;
 
 	margin: 5px;
 }
 
 #hacker-name
 {
-
+	width: auto;
+	left: 100px;
 }
