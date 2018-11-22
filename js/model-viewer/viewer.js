@@ -45,8 +45,7 @@ function createObject()
 	var loader = new THREE.FBXLoader();
 	loader.load(match.filePath, function(object)
 	{
-		//object.material = mat;
-		object.material.setHex(match.color);
+		object.material = mat;
 		object.name = "Mesh Display";
 
 		scene.add(object);
@@ -106,11 +105,6 @@ createObject();
 
 // Setting the Camera position
 camera.position.z = 300;
-
-	mesh = scene.getObjectByName("Mesh Display");
-	mesh.material = mat;
-
-	//camera.position = (0, 0, 300);
 
 // Update Loop
 function animate()
