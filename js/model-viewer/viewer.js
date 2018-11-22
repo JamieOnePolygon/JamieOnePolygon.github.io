@@ -111,7 +111,7 @@ function getCardDetails()
 createObject();
 
 // Setting the Camera position
-camera.position.z = 10;
+camera.position.z = 110;
 
 // Update Loop
 function animate()
