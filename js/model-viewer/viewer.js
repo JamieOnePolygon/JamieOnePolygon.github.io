@@ -106,7 +106,7 @@ createObject();
 // Setting the Camera position
 //camera.position.z = 300;
 
-	camera.position = (0, 50, 300);
+	camera.position = (0, 0, 300);
 
 // Update Loop
 function animate()
