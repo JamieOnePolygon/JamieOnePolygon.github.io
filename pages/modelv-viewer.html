@@ -3,6 +3,9 @@
 	<head>
 		<title>Model Viewer</title>
 		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="/css/styles.css">
+
 		<style>
 			body {margin: 0px}
 			canvas {width: 100%; height: 100%}
@@ -13,6 +16,14 @@
 	</head>
 
 	<body>
+		<!-- This will contain all of the content for the Screen-Based UI on the model viewer.-->
+		<!-- This contains; Card Name/Price, Hacker Name/Icon, Deploy and Scan Again Buttons, misc graphics. -->
+		<div id="overlay-ui" style="display: block;">
+			<h1 id="card-name" class="visible" style="min-height: 100px; margin-left: auto; margin-right: auto; width: 33%;">Bitlocker</h1>
+		</div>
+
+
+		<!-- THREE.js scripts for viewing the model-->
 		<script src="/js/three.js"></script>
 		<script src="/js/loaders/FBXLoader.js"></script>
 		<script src="/js/model-viewer/viewer.js"></script>

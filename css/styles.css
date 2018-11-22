@@ -1,0 +1,10 @@
+body 
+{
+	font-family: ariel;
+	color: white;
+}
+
+#card-name
+{
+	background-color: rgba(0, 0, 0, 0.6);
+}

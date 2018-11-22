@@ -35,9 +35,14 @@ function setupScene()
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 
+	lightScene();
+}
+
+function lightScene()
+{
 	//Creating a directional light and adding it to the scene.
 	var light = new THREE.DirectionalLight(0xffffff);
-	light.position.set(150, 200, 50);
+	light.position.set(150, 200, -25);
 	light.castShadow = true;
 
 	light.shadow.top = 180;
@@ -51,6 +56,7 @@ function setupScene()
 	light.position.set(0, 200, 0);
 	scene.add(light);
 }
+
 
 setupScene();
 
