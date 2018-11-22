@@ -39,12 +39,17 @@ function setupScene()
 	var light = new THREE.DirectionalLight(0xFFDA82);
 	light.position.set(0, 200, 100);
 	light.castShadow = true;
+
+	light.shadow.top = 180;
+	light.shadow.bottom = -100;
+	light.shadow.left = -120;
+	light.shadow.right = 120;
+
 	scene.add(light);
 
-	light = new THREE.HemisphereLight(0xffffff, 0x444444);
+	/*light = new THREE.HemisphereLight(0xffffff, 0x444444);
 	light.position.set(0, 200, 0);
-	light.castShadow = true;
-	scene.add(light);
+	scene.add(light);*/
 }
 
 setupScene();
