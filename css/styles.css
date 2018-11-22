@@ -57,3 +57,17 @@ h1#card-name
 
 	background-color: rgba(0, 0, 0, 0.8);
 }
+
+#hacker-avatar
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+
+	margin: 5px;
+}
+
+#hacker-name
+{
+
+}
