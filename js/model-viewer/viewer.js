@@ -81,6 +81,8 @@ function createObject()
 		console.log("Created object " + match.name);
 	});
 
+	document.getElementById("card-name").innerHTML = match.name;
+
 	/*if (id == 0)
 	{
 		geo = new THREE.SphereGeometry(5, 12, 12);
@@ -123,8 +125,6 @@ function getCardDetails()
 			break;
 		}
 	}
-
-	console.log(match.name);
 
 	return match;
 }
