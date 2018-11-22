@@ -28,10 +28,14 @@ h1#card-name
 
 #card-price
 {
+	position: absolute;
 	width: 50%;
+	margin: 10px auto 0px 0px;
 }
 
 #card-level
 {
+	position: absolute;
 	width: 50%;
+	margin: 10px 0px 0px auto;
 }
