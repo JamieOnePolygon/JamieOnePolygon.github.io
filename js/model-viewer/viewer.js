@@ -45,8 +45,9 @@ function createObject()
 	var loader = new THREE.FBXLoader();
 	loader.load(match.filePath, function(object)
 	{
-		object.mateiral = mat;
+		object.mateiral.setHex(match.color);
 		object.name = "Mesh Display";
+
 		scene.add(object);
 
 		console.log("Created object " + match.name);
