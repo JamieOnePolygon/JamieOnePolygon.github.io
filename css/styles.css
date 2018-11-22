@@ -69,8 +69,8 @@ h1#card-name
 #user-name
 {
 	position: absolute;
-	width: 68%;
-	left: 30%;
+	width: 65%;
+	left: 31.5%;
 	font-size: 22px;
 	margin: 10px;
 	margin-right: 0px;
@@ -79,8 +79,8 @@ h1#card-name
 #user-funds
 {
 	position: absolute;
-	width: 68%;
-	left: 30%;
+	width: 65%;
+	left: 31.5%;
 	font-size: 16px;
 	margin: 10px;
 	margin-top:40px;
@@ -90,10 +90,10 @@ h1#card-name
 #user-score
 {
 	position: absolute;
-	width: 68%;
-	left: 30%;
+	width: 65%;
+	left: 31.5%;
 	font-size: 16px;
 	margin: 10px;
-	margin-top:80px;
+	margin-top: 65px;
 	margin-right: 0px;
 }
