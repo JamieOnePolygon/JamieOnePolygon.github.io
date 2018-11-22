@@ -39,8 +39,8 @@ h1#card-name
 {
 	position: absolute;
 	width: 50%;
-	left: 50%;
-	margin-right: 15px;
+	left: 48%;
+	margin-right: 1%;
 
 	text-align: right;
 }
