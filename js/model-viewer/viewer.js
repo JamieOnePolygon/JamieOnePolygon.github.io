@@ -45,17 +45,12 @@ function createObject()
 	var spawned;
 
 	// Creating a FBX Model Loader object in prerperation for loading a mesh
-	var loader= new THREE.FBXLoader();
+	var loader = new THREE.FBXLoader();
 	loader.load(match.filePath, function(object)
 	{
 		var mat = new THREE.MeshStandardMaterial( {color: match.color });
-		//object.mateiral.color.setHex('0x' + match.color);
-		//object.scale = (0.1, 0.1, 0.1);
 
 		spawned = object;
-
-		scene.add(spawned);
-
 		console.log("Created object " + match.name);
 	});
 
@@ -78,10 +73,9 @@ function createObject()
 
 	// Adding some slight rotation to the sphere
 	mesh.rotation.x = 0.8;*/
-	if (spawned)
-	{
-		mesh = spawned;
-	}
+
+	mesh = spawned;
+	scene.add(mesh);
 
 }
 
