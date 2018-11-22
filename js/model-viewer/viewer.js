@@ -55,6 +55,9 @@ function createObject()
 	});
 
 
+	mesh = scene.getObjectByName("Mesh Display");
+	mesh.material = mat;
+
 	/*if (id == 0)
 	{
 		geo = new THREE.SphereGeometry(5, 12, 12);
