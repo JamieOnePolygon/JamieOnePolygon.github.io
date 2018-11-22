@@ -61,14 +61,28 @@ h1#card-name
 #hacker-avatar
 {
 	position: absolute;
-	width: 100px;
+	height: 85%;
 
-	margin: 5px;
+	margin: 8px;
 }
 
 #hacker-name
 {
 	position: absolute;
-	width: auto;
-	left: 110px;
+	width: 68%;
+	left: 30%;
+	font-size: 22px;
+	margin: 10px;
+	margin-right: 0px;
+}
+
+#hacker-score
+{
+	position: absolute;
+	width: 68%;
+	left: 30%;
+	font-size: 16px;
+	margin: 10px;
+	margin-top:30px;
+	margin-right: 0px;
 }
