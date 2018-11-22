@@ -37,9 +37,9 @@ function setupScene()
 
 	//Creating a directional light and adding it to the scene.
 	var light = new THREE.DirectionalLight(0xFFDA82);
-	dirLight.position.x = 2;
-	dirLight.castShadow = true;
-	scene.add(dirLight);
+	light.position.x = 2;
+	light.castShadow = true;
+	scene.add(light);
 
 	light = new THREE.HemisphereLight(0xffffff, 0x444444);
 	light.position.set(0, 200, 0);
