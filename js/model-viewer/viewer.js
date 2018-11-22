@@ -54,10 +54,6 @@ function createObject()
 		console.log("Created object " + match.name);
 	});
 
-
-	mesh = scene.getObjectByName("Mesh Display");
-	mesh.material = mat;
-
 	/*if (id == 0)
 	{
 		geo = new THREE.SphereGeometry(5, 12, 12);
@@ -109,9 +105,12 @@ function getCardDetails()
 createObject();
 
 // Setting the Camera position
-//camera.position.z = 300;
+camera.position.z = 300;
 
-	camera.position = (0, 0, 300);
+	mesh = scene.getObjectByName("Mesh Display");
+	mesh.material = mat;
+
+	//camera.position = (0, 0, 300);
 
 // Update Loop
 function animate()
