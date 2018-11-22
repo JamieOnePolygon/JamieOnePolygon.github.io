@@ -43,7 +43,7 @@ function setupScene()
 
 	light = new THREE.HemisphereLight(0xffffff, 0x444444);
 	light.position.set(0, 200, 0);
-	//light.castShadow = true;
+	light.castShadow = true;
 	scene.add(light);
 }
 
