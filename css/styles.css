@@ -45,7 +45,7 @@ h1#card-name
 	text-align: right;
 }
 
-#hacker-details
+#user-details
 {
 	position: absolute;
 
@@ -58,7 +58,7 @@ h1#card-name
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
-#hacker-avatar
+#user-avatar
 {
 	position: absolute;
 	height: 85%;
@@ -66,7 +66,7 @@ h1#card-name
 	margin: 8px;
 }
 
-#hacker-name
+#user-name
 {
 	position: absolute;
 	width: 68%;
@@ -76,7 +76,7 @@ h1#card-name
 	margin-right: 0px;
 }
 
-#hacker-score
+#user-funds
 {
 	position: absolute;
 	width: 68%;
@@ -84,5 +84,16 @@ h1#card-name
 	font-size: 16px;
 	margin: 10px;
 	margin-top:40px;
+	margin-right: 0px;
+}
+
+#user-score
+{
+	position: absolute;
+	width: 68%;
+	left: 30%;
+	font-size: 16px;
+	margin: 10px;
+	margin-top:80px;
 	margin-right: 0px;
 }
