@@ -18,7 +18,7 @@ h1#card-name
 	min-height: 90px;
 	position: absolute;
 
-	margin-top: 25px;
+	margin-top: 15px;
 
 	background-color: rgba(0, 0, 0, 0.8);
 }
@@ -50,7 +50,10 @@ h1#card-name
 	position: absolute;
 
 	min-height: 110px;
-	width: 150px;
+	width: 325px;
+
+	margin-top: 15px;
+	margin-left: 15px;
 
 	background-color: rgba(0, 0, 0, 0.8);
 }
