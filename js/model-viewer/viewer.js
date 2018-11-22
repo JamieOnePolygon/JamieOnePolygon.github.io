@@ -121,8 +121,8 @@ function getCardDetails()
 createObject();
 
 // Setting the Camera position
-camera.position.z = 300;
-camera.position.y = 300;
+camera.position.z = 175;
+camera.position.y = 175;
 
 camera.lookAt(0, 0, 0);
 
