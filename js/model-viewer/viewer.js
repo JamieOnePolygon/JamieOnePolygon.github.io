@@ -42,25 +42,14 @@ function createObject()
 	const urlParam = new URLSearchParams(window.location.search);
 	var id = urlParam.get('id');
 
-
-	var cards = '{"cards": [{"id": 0, "name": "is this working"}, {"id": 1, "name": "another test card"}]}';
-
-	var loading = JSON.parse(cards);
-	console.log(loading.cards);
-
-	var match;
-	var i;
-
-	for(i = 0; i < loading.cards.length; i++)
-	{
-		if (loading.cards[i].id == id)
-		{
-			match = loading.cards[i];
-			break;
-		}
-	}
+	var match = getCardDetails();
 
 	console.log(match.name);
+
+	// Creating a FBX Model Loader object in prerperation for loading a mesh
+	var loader= new THREE.FBXLoader();
+	//loader.load()
+
 
 	if (id == 0)
 	{
@@ -83,6 +72,26 @@ function createObject()
 
 }
 
+function getCardDetails()
+{
+	var match;
+	var i;
+
+	var loading = JSON.parse('/cardData.json');
+
+	for(i = 0; i < loading.cards.length; i++)
+	{
+		if (loading.cards[i].id == id)
+		{
+			match = loading.cards[i];
+			break;
+		}
+	}
+
+	console.log(match.name);
+
+	return match;
+}
 
 createObject();
 
