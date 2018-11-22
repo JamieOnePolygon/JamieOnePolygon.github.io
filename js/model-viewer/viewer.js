@@ -117,7 +117,7 @@ function animate()
 {
 	requestAnimationFrame(animate);
 
-	animateObject();
+	//animateObject();
 
 	renderer.render(scene, camera);
 }
