@@ -16,7 +16,7 @@ function setupScene()
 	scene.background = new THREE.Color(0xa0a0a0);
 
 	//Creating a plane which the objects sit on, and a grid efect
-	var ground =  new THREE.Mesh( new THREE.PlaneBufferGeometry( 2000, 2000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
+	var ground =  new THREE.Mesh( new THREE.PlaneBufferGeometry( 2000, 2000 ), new THREE.MeshStandardMaterial( { color: 0x999999 } ) );
 	ground.rotation.x = - Math.PI / 2;
 	ground.receiveShadow = true;
 	scene.add( ground );
@@ -43,6 +43,7 @@ function setupScene()
 
 	light = new THREE.HemisphereLight(0xffffff, 0x444444);
 	light.position.set(0, 200, 0);
+	light.castShadow = true;
 	scene.add(light);
 }
 
