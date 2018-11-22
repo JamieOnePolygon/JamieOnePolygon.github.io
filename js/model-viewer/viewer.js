@@ -40,11 +40,6 @@ function createObject()
 {
 	// Creating and storing a variable to hold the geometry we will populate
 	var geo;
-	// Here we now want to look up which model we want to display. This will be done
-	// by loading the JSON file containing all of the data for the cards in the future.
-	// For now we just use an if statement.
-	const urlParam = new URLSearchParams(window.location.search);
-	var id = urlParam.get('id');
 
 	var match = getCardDetails();
 
@@ -54,6 +49,8 @@ function createObject()
 	var loader= new THREE.FBXLoader();
 	loader.load(match.filePath, function(object)
 	{
+		object.mateiral.color.setHex(0x + match.color);
+
 		scene.add(object);
 
 		console.log("Created object" + match.name);
@@ -69,7 +66,7 @@ function createObject()
 		geo = new THREE.BoxGeometry(3, 3, 3);
 	}*/
 
-	// Now for the moment we are just going to add a sphere to render
+	/*// Now for the moment we are just going to add a sphere to render
 	var mat = new THREE.MeshStandardMaterial( {color: 0x800000 });
 
 	mesh = new THREE.Mesh(geo, mat);
@@ -77,7 +74,7 @@ function createObject()
 	scene.add(mesh);
 
 	// Adding some slight rotation to the sphere
-	mesh.rotation.x = 0.8;
+	mesh.rotation.x = 0.8;*/
 
 }
 
@@ -85,6 +82,12 @@ function getCardDetails()
 {
 	var match;
 	var i;
+
+	// Here we now want to look up which model we want to display. This will be done
+	// by loading the JSON file containing all of the data for the cards in the future.
+	// For now we just use an if statement.
+	const urlParam = new URLSearchParams(window.location.search);
+	var id = urlParam.get('id');
 
 	var loading = JSON.parse(cardDetails);
 
