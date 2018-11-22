@@ -10,13 +10,28 @@ h1#card-name
 	margin: 0px;
 }
 
-#card-name
+#card-details
 {
 	width: inherit;
 	left:33%;
 	right: 33%;
-	min-height: 60px;
+	min-height: 90px;
 	position: absolute;
 
 	background-color: rgba(0, 0, 0, 0.8);
+}
+
+#card-name
+{
+	width: auto;
+}
+
+#card-price
+{
+	width: 50%;
+}
+
+#card-level
+{
+	width: 50%;
 }
