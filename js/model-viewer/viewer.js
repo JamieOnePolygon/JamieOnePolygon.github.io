@@ -3,7 +3,6 @@ var scene;
 var camera;
 var renderer;
 
-// Decalring the mesh that we're going to display
 var mesh;
 
 // THE JSON DATA
@@ -38,19 +37,18 @@ document.body.appendChild(renderer.domElement);
 
 function createObject()
 {
-	// Creating and storing a variable to hold the geometry we will populate
-	var geo;
-
 	var match = getCardDetails();
-	var spawned;
+
+	var mat = new THREE.MeshStandardMaterial( {color: match.color });
 
 	// Creating a FBX Model Loader object in prerperation for loading a mesh
 	var loader = new THREE.FBXLoader();
 	loader.load(match.filePath, function(object)
 	{
-		var mat = new THREE.MeshStandardMaterial( {color: match.color });
+		object.mateiral = mat;
+		object.name = "Mesh Display";
+		scene.add(object);
 
-		spawned = object;
 		console.log("Created object " + match.name);
 	});
 
@@ -73,9 +71,6 @@ function createObject()
 
 	// Adding some slight rotation to the sphere
 	mesh.rotation.x = 0.8;*/
-
-	mesh = spawned;
-	scene.add(mesh);
 
 }
 
@@ -125,5 +120,12 @@ animate();
 
 function animateObject()
 {
-	if (mesh) mesh.rotation.y += 0.01;
+	if (mesh) 
+	{
+		mesh.rotation.y += 0.01;
+	}
+	else 
+	{
+		mesh = scene.getObjectByName("Mesh Display");
+	}
 }
