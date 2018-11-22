@@ -109,7 +109,7 @@ function getCardDetails()
 	var match;
 	var i;
 
-	var loading = JSON.parse(cardData.json);
+	var loading = JSON.parse(cardDetails);
 
 	for(i = 0; i < loading.cards.length; i++)
 	{
