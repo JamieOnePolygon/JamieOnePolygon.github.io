@@ -51,7 +51,9 @@ function createObject()
 	{
 		object.mateiral.color.setHex('0x' + match.color);
 
-		scene.add(object);
+		mesh = object;
+
+		scene.add(mesh);
 
 		console.log("Created object" + match.name);
 	});
