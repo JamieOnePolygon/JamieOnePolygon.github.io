@@ -19,8 +19,6 @@ function setupScene()
 	var aspect = window.innerWidth / window.innerHeight;
 	camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
 
-	camera.position = (0, 200, 300);
-
 	// Creating a new renderer which will render everything
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -107,6 +105,8 @@ createObject();
 
 // Setting the Camera position
 //camera.position.z = 300;
+
+	camera.position = (0, 200, 300);
 
 // Update Loop
 function animate()
