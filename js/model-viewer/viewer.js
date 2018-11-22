@@ -7,7 +7,7 @@ var renderer;
 var mesh;
 
 // THE JSON DATA
-var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/GeoSphere.FBX","name": "Bitlocker","color": 0x800000,"description": "This is a test description.","objective": "This is a test objective","cost": 100000},{"id": 1,"filePath": "/content/models/Teapot.FBX","name": "Multi-factor Authentication","color": 0x800000,"description": "This is a test description.","objective": "This is a test objective","cost": 100000}]}';
+var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/GeoSphere.FBX","name": "Bitlocker","color": 800000,"description": "This is a test description.","objective": "This is a test objective","cost": 100000},{"id": 1,"filePath": "/content/models/Teapot.FBX","name": "Multi-factor Authentication","color": 800000,"description": "This is a test description.","objective": "This is a test objective","cost": 100000}]}';
 
 
 function setupScene()
