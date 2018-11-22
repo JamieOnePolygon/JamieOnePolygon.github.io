@@ -82,6 +82,7 @@ function createObject()
 	});
 
 	document.getElementById("card-name").innerHTML = match.name;
+	document.getElementById("card-price").innerHTML = 'Price: $' + match.price;
 
 	/*if (id == 0)
 	{
