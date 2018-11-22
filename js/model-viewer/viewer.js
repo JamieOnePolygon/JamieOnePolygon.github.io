@@ -17,7 +17,7 @@ function setupScene()
 	scene.fog = new THREE.Fog(0xa0a0a0, 200, 1000);
 
 	//Creating a plane which the objects sit on, and a grid efect
-	var ground =  new THREE.Mesh( new THREE.PlaneBufferGeometry( 3000, 3000 ), new THREE.MeshStandardMaterial( { color: 0x999999 } ) );
+	var ground =  new THREE.Mesh( new THREE.PlaneBufferGeometry( 3000, 3000 ), new THREE.MeshStandardMaterial( { color: 0xa0a0a0 } ) );
 	ground.rotation.x = - Math.PI / 2;
 	ground.receiveShadow = true;
 	scene.add( ground );
