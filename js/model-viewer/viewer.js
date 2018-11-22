@@ -51,7 +51,7 @@ function createObject()
 	{
 		var mat = new THREE.MeshStandardMaterial( {color: match.color });
 		//object.mateiral.color.setHex('0x' + match.color);
-		object.scale = (0.01, 0.01, 0.01);
+		//object.scale = (0.1, 0.1, 0.1);
 
 		mesh = object;
 
@@ -112,7 +112,7 @@ function getCardDetails()
 createObject();
 
 // Setting the Camera position
-camera.position.z = 15;
+camera.position.z = 300;
 
 // Update Loop
 function animate()
