@@ -43,15 +43,22 @@ function createObject()
 	var id = urlParam.get('id');
 
 
-	var cards = '{"cards": [{"id": 0, "name": "is this working"}, {"id": 1, "name": "another test card"}]';
+	var cards = '{"cards": [{"id": 0, "name": "is this working"}, {"id": 1, "name": "another test card"}]}';
 
 	var loading = JSON.parse(cards);
 	console.log(loading.cards);
 
-	//var match = loading.cards.filter(function(x)
-	//{
-	//	return x.id == id;
-	//});
+	var match;
+	var i;
+
+	for(i = 0; i < loading.cards.length; i++)
+	{
+		if (loading.cards[i].id == id)
+		{
+			match = loading.cards[i];
+			break;
+		}
+	}
 
 	console.log(match.name);
 
