@@ -42,8 +42,7 @@ function createObject()
 	var geo;
 
 	var match = getCardDetails();
-
-	console.log(match.name);
+	var spawned;
 
 	// Creating a FBX Model Loader object in prerperation for loading a mesh
 	var loader= new THREE.FBXLoader();
@@ -53,11 +52,11 @@ function createObject()
 		//object.mateiral.color.setHex('0x' + match.color);
 		//object.scale = (0.1, 0.1, 0.1);
 
-		mesh = object;
+		spawned = object;
 
 		scene.add(mesh);
 
-		console.log("Created object" + match.name);
+		console.log("Created object " + match.name);
 	});
 
 
@@ -79,6 +78,10 @@ function createObject()
 
 	// Adding some slight rotation to the sphere
 	mesh.rotation.x = 0.8;*/
+	if (spawned)
+	{
+		mesh = spawned;
+	}
 
 }
 
@@ -119,7 +122,7 @@ function animate()
 {
 	requestAnimationFrame(animate);
 
-	//animateObject();
+	animateObject();
 
 	renderer.render(scene, camera);
 }
@@ -128,5 +131,5 @@ animate();
 
 function animateObject()
 {
-	mesh.rotation.y += 0.01;
+	if (mesh) mesh.rotation.y += 0.01;
 }
