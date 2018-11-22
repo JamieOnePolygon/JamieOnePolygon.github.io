@@ -54,7 +54,7 @@ function createObject()
 
 		spawned = object;
 
-		scene.add(mesh);
+		scene.add(spawned);
 
 		console.log("Created object " + match.name);
 	});
