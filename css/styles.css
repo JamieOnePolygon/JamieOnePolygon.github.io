@@ -98,7 +98,7 @@ h1#card-name
 	margin-right: 0px;
 }
 
-#deploy-test
+#deploy
 {
 	position: absolute;
 	bottom: 0;
@@ -114,7 +114,7 @@ h1#card-name
 	background-color: rgba(10, 10, 10, 0.8);
 }
 
-#deploy
+#deploy-tag
 {
 	position: absolute;
 	top: 0;
@@ -137,6 +137,28 @@ h1#card-name
 
 	bottom: 4%;
 	left: 12.5%;
+}
+
+#scan-again
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+	width: 10%;
+	height: 10%;
+}
+
+#scan-tag
+{
+	position: absolute;
+
+	width: 100%;
+
+	text-align: center;
+	font-family: monospace;
+	font-weight: bold;
+	font-size: x-large;
 }
 
 #misc-tr
