@@ -78,6 +78,10 @@ function createObject()
 	{
 		object.castShadow = true;
 		object.materials = mat;
+
+		object.geometry.bufferNeedsUpdate = true;
+		object.geometry.uvsNeedUpdate = true;
+
 		object.name = "Mesh Display";
 
 		scene.add(object);
