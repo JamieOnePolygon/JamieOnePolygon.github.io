@@ -145,12 +145,23 @@ h1#card-name
 	margin-bottom: 1%;
 }
 
+#deploy-test:hover
+{
+	background-color: rgba(10, 10, 10, 0.8);
+}
+
 #deploy-tag
 {
 	position: absolute;
 	top: 0;
 
-	text-align: center;
+	margin: 0px;
+	margin-top: 15px;
+	margin-left: -7.5px;
+
+	font-family: monospace;
+	font-weight: bold;
+	font-size: x-large;
 }
 
 #fingerprint
