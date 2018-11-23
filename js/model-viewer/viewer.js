@@ -6,7 +6,7 @@ var renderer;
 var mesh;
 
 // THE JSON DATA
-var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/control/Notification_02.fbx","name": "Bitlocker","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1},{"id": 1,"filePath": "/content/models/Teapot.FBX","name": "Multi-factor Authentication","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1}]}';
+var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/control/Notification_02.fbx","name": "Bit Locker","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1},{"id": 1,"filePath": "/content/models/Teapot.FBX","name": "Multi-factor Authentication","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1}]}';
 
 
 function setupScene()
@@ -138,7 +138,7 @@ createObject();
 camera.position.z = 175;
 camera.position.y = 250;
 
-camera.lookAt(0, 0, 0);
+camera.lookAt(0, 50, 0);
 
 // Update Loop
 function animate()

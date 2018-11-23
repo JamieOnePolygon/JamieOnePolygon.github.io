@@ -115,6 +115,8 @@ h1#card-name
 
 #deploy
 {
+	position: absolute;
+
 	width: 50%;
 	left: 0;
 
@@ -123,6 +125,8 @@ h1#card-name
 
 #scan-again
 {
+	position: absolute;
+
 	width: 50%;
 	right: 0;
 
