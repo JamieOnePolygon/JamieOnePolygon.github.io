@@ -153,18 +153,15 @@ function deployCard()
 	// Play animation on the mesh.
 
 	// Send a message to socket.io
-	alert("Played Card: " + scannedCard.name);
+	//alert("Played Card: " + scannedCard.name);
 
 	// Wait until the animation has stopped to move back to the phaser page.
 	var mixer = new THREE.AnimationMixer(mesh);
 	var clips = mesh.animations;
 
-	console.log(clips);
-
-	clips.forEach(function(clip)
-	{
-		mixer.clipAction(clip).play();
-	});
+	var clip = THREE.AnimationClip.findByName(clips, 'Take 001');
+	var action = mixer.clipAction(clip);
+	action.play();
 
 	//setInterval(open('/index.html'), 1500);
 }
