@@ -7,7 +7,7 @@ var mesh;
 
 // THE JSON DATA
 var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/control/Notification_02.fbx","name": "Bit Locker","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1},{"id": 1,"filePath": "/content/models/Teapot.FBX","name": "Multi-factor Authentication","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1}]}';
-
+var scannedCard;
 
 function setupScene()
 {
@@ -66,45 +66,25 @@ document.body.appendChild(renderer.domElement);
 
 function createObject()
 {
-	var match = getCardDetails();
+	scannedCard = getCardDetails();
 
 	var mat = new THREE.MeshStandardMaterial( {color: 0xff0000 });
 
 	// Creating a FBX Model Loader object in prerperation for loading a mesh
 	var loader = new THREE.FBXLoader();
-	loader.load(match.filePath, function(object)
+	loader.load(scannedCard.filePath, function(object)
 	{
 		object.material = mat;
 		object.name = "Mesh Display";
 
 		scene.add(object);
 
-		console.log("Created object " + match.name);
+		console.log("Created object " + scannedCard.name);
 	});
 
-	document.getElementById("card-name").innerHTML = match.name;
-	document.getElementById("card-price").innerHTML = 'Price: $' + match.cost;
-	document.getElementById("card-level").innerHTML = 'Card Level: ' + match.level;
-
-	/*if (id == 0)
-	{
-		geo = new THREE.SphereGeometry(5, 12, 12);
-	}
-	else 
-	{
-		geo = new THREE.BoxGeometry(3, 3, 3);
-	}*/
-
-	/*// Now for the moment we are just going to add a sphere to render
-	var mat = new THREE.MeshStandardMaterial( {color: 0x800000 });
-
-	mesh = new THREE.Mesh(geo, mat);
-	//Now that we have a mesh created, we are going to add it to the scene.
-	scene.add(mesh);
-
-	// Adding some slight rotation to the sphere
-	mesh.rotation.x = 0.8;*/
-
+	document.getElementById("card-name").innerHTML = scannedCard.name;
+	document.getElementById("card-price").innerHTML = 'Price: $' + scannedCard.cost;
+	document.getElementById("card-level").innerHTML = 'Card Level: ' + scannedCard.level;
 }
 
 function getCardDetails()
@@ -157,10 +137,22 @@ function animateObject()
 {
 	if (mesh) 
 	{
-		mesh.rotation.y += 0.01;
+		mesh.rotation.y += 0.005;
 	}
 	else 
 	{
 		mesh = scene.getObjectByName("Mesh Display");
 	}
 }
+
+document.getElementById("deploy").addEventListener('click', deployCard);
+
+function deployCard()
+{
+	alert("Played Card:" + scannedCard.name);
+}
+
+document.getElementById("scan-again").addEventListener('click', function()
+{
+	open('webar.html');
+});
