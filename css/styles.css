@@ -138,7 +138,7 @@ h1#card-name
 {
 	position: absolute;
 	bottom: 0;
-	left: 47.75%;
+	left: 46%;
 
 	width: 7.5%;
 	height: 20%;
@@ -155,10 +155,13 @@ h1#card-name
 	position: absolute;
 	top: 0;
 
+	width: 100%;
+
 	margin: 0px;
 	margin-top: 15px;
 	margin-left: -7.5px;
 
+	text-align: center;
 	font-family: monospace;
 	font-weight: bold;
 	font-size: x-large;
@@ -166,10 +169,11 @@ h1#card-name
 
 #fingerprint
 {
-	height: 75%;
-	bottom: 0;
 	position: absolute;
+	height: 75%;
 
+	bottom: 4%;
+	left: 12.5%;
 }
 
 #scan-again
