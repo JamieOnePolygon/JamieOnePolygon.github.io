@@ -41,7 +41,7 @@
 	</script>
 
 	<body>
-		<a-scene embedded arjs='sourceType: webcam; trackingMethod: best; debugUIEnabled: false;'>
+		<a-scene embedded arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3; sourceType: webcam; trackingMethod: best; debugUIEnabled: false;'>
 
 				<!-- Tracking the default Hiro Pattern and showing a Cube
 					 This marker is set up to emit events using the registerevents attribute -->
@@ -49,7 +49,7 @@
 					<a-box position='0 0.5 0' color='red'></a-box>
 				</a-marker>
 
-				<a-marker id='1' type='pattern' url='http://examples.org/kanji.patt' registerevents>
+				<a-marker id='1' type='brcode' value='5' registerevents>
 					<a-box position= '0 0.5 0' color='blue'></a-box>
 				</a-marker>
 
