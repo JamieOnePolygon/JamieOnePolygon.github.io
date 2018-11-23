@@ -154,12 +154,17 @@ function deployCard()
 
 	// Send a message to socket.io
 	alert("Played Card: " + scannedCard.name);
-	setInterval(function()
-	{
-		open('/index.html', '_self');
-	}, 1500);
 
 	// Wait until the animation has stopped to move back to the phaser page.
+	var mixer = new THREE.AnimationMixer(mesh);
+	var clips = mesh.animations;
+
+	clips.foreach(function(clip)
+	{
+		mixer.clipAction(clip).play();
+	});
+
+	setInterval(open('/index.html'), 1500);
 }
 
 document.getElementById("scan-again").addEventListener('click', function()
