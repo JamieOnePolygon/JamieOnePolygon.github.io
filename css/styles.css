@@ -98,42 +98,6 @@ h1#card-name
 	margin-right: 0px;
 }
 
-#button-container
-{
-	position: absolute;
-	width: inherit;
-	min-height: 90px;
-
-	left: 30%;
-	right: 30%;
-	bottom: 0;
-
-	margin-bottom: 15px;
-
-	background-color: rgba(0, 0, 0, 0.8);
-}
-
-#deploy
-{
-	position: absolute;
-
-	width: 50%;
-	left: 0;
-
-	height: 100%;
-
-	font-family: Verdana;
-	background-color: rgba(0, 0, 0, 0.8);
-	color: white;
-
-	border:none;
-}
-
-#deploy:hover
-{
-	background-color: rgba(10, 10, 10, 0.8);
-}
-
 #deploy-test
 {
 	position: absolute;
@@ -145,12 +109,12 @@ h1#card-name
 	margin-bottom: 1%;
 }
 
-#deploy-test:hover
+#deploy:hover
 {
 	background-color: rgba(10, 10, 10, 0.8);
 }
 
-#deploy-tag
+#deploy
 {
 	position: absolute;
 	top: 0;
@@ -158,8 +122,7 @@ h1#card-name
 	width: 100%;
 
 	margin: 0px;
-	margin-top: 15px;
-	margin-left: -7.5px;
+	margin-top: 10px;
 
 	text-align: center;
 	font-family: monospace;
@@ -174,27 +137,6 @@ h1#card-name
 
 	bottom: 4%;
 	left: 12.5%;
-}
-
-#scan-again
-{
-	position: absolute;
-
-	width: 50%;
-	right: 0;
-
-	height: 100%;
-
-	font-family: Verdana;
-	background-color: rgba(0, 0, 0, 0.8);
-	color: white;
-
-	border: none;
-}
-
-#scan-again:hover
-{
-	background-color: rgba(10, 10, 10, 0.8);
 }
 
 #misc-tr
