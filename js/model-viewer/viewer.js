@@ -159,12 +159,14 @@ function deployCard()
 	var mixer = new THREE.AnimationMixer(mesh);
 	var clips = mesh.animations;
 
+	console.log(clips);
+
 	clips.forEach(function(clip)
 	{
 		mixer.clipAction(clip).play();
 	});
 
-	setInterval(open('/index.html'), 1500);
+	//setInterval(open('/index.html'), 1500);
 }
 
 document.getElementById("scan-again").addEventListener('click', function()
