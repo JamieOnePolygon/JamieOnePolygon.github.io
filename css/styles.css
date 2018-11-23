@@ -106,6 +106,25 @@ h1#card-name
 
 	left: 30%;
 	right: 30%;
+	bottom: 0;
+
+	margin-bottom: 15px;
 
 	background-color: rgba(0, 0, 0, 0.8);
+}
+
+#deploy
+{
+	width: 50%;
+	left: 0;
+
+	height: 100%;
+}
+
+#scan-again
+{
+	width: 50%;
+	right: 0;
+
+	height: 100%;
 }
