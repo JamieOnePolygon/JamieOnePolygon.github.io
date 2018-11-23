@@ -136,7 +136,7 @@ createObject();
 
 // Setting the Camera position
 camera.position.z = 175;
-camera.position.y = 250;
+camera.position.y = 200;
 
 camera.lookAt(0, 50, 0);
 
