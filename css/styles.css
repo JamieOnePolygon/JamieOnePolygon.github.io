@@ -134,6 +134,17 @@ h1#card-name
 	background-color: rgba(10, 10, 10, 0.8);
 }
 
+#deploy-test
+{
+	position: absolute;
+	bottom: 0;
+
+	width: 166px;
+	height: 230px;
+
+	background-image: url("/content/sprites/fingerprint.png");
+}
+
 #scan-again
 {
 	position: absolute;
