@@ -74,6 +74,7 @@ function createObject()
 	var loader = new THREE.FBXLoader();
 	loader.load(scannedCard.filePath, function(object)
 	{
+		object.castShadow = true;
 		object.material = mat;
 		object.name = "Mesh Display";
 
