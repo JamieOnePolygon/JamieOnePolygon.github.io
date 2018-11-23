@@ -149,10 +149,19 @@ document.getElementById("deploy").addEventListener('click', deployCard);
 
 function deployCard()
 {
-	alert("Played Card:" + scannedCard.name);
+	// Play animation on the mesh.
+
+	// Send a message to socket.io
+	alert("Played Card: " + scannedCard.name);
+	setInterval(function()
+	{
+		open('/index.html', '_self');
+	}, 1500);
+
+	// Wait until the animation has stopped to move back to the phaser page.
 }
 
 document.getElementById("scan-again").addEventListener('click', function()
 {
-	open('webar.html');
+	open('webar.html', '_self');
 });
