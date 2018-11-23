@@ -6,7 +6,7 @@ var renderer;
 var mesh;
 
 // THE JSON DATA
-var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/control/Notification_02.fbx","name": "Bit Locker","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1},{"id": 1,"filePath": "/content/models/Teapot.FBX","name": "Multi-factor Authentication","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1}]}';
+var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/control/Notification_02.fbx","name": "Notification Alert","color": "0x800000","description": "All phones now display a notification for when there is a call from outside of the company.","objective": "This is a test objective","cost": 300, "level": 0},{"id": 1,"filePath": "/content/models/Teapot.FBX","name": "Multi-factor Authentication","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1}]}';
 var scannedCard;
 
 function setupScene()
