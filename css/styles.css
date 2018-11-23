@@ -116,7 +116,7 @@ h1#card-name
 	border-style: solid;
 	border-color: white;
 
-	border-width: 3px;
+	border-width: 1px;
 }
 
 #deploy-tag
@@ -152,6 +152,16 @@ h1#card-name
 
 	width: 10%;
 	height: 10%;
+}
+
+#scan-again:hover
+{
+	background-color: rgba(10, 10, 10, 0.8);
+
+	border-style: solid;
+	border-color: white;
+
+	border-width: 1px;
 }
 
 #scan-tag
