@@ -112,6 +112,11 @@ h1#card-name
 #deploy:hover
 {
 	background-color: rgba(10, 10, 10, 0.8);
+
+	border-style: solid;
+	border-color: white;
+
+	border-width: 3px;
 }
 
 #deploy-tag

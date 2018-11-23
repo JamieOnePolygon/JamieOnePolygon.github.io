@@ -146,7 +146,7 @@ function animateObject()
 	}
 }
 
-document.getElementById("deploy-test").addEventListener('click', deployCard);
+document.getElementById("deploy").addEventListener('click', deployCard);
 
 function deployCard()
 {
