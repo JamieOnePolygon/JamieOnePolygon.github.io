@@ -115,7 +115,7 @@ h1#card-name
 {
 	background-color: rgba(10, 10, 10, 0.8);
 
-	border: 1px dotted transparent;
+	border: 1px dotted white;
 }
 
 #deploy-tag
@@ -162,7 +162,7 @@ h1#card-name
 {
 	background-color: rgba(10, 10, 10, 0.8);
 
-	border: 1px solid transparent;
+	border: 1px solid white;
 }
 
 #back
