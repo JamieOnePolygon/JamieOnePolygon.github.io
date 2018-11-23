@@ -97,3 +97,15 @@ h1#card-name
 	margin-top: 65px;
 	margin-right: 0px;
 }
+
+#button-container
+{
+	position: absolute;
+	width: inherit;
+	min-height: 90px;
+
+	left: 30%;
+	right: 30%;
+
+	background-color: rgba(0, 0, 0, 0.8);
+}
