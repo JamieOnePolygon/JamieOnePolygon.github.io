@@ -76,6 +76,8 @@ function createObject()
 	var loader = new THREE.FBXLoader();
 	loader.load(scannedCard.filePath, function(object)
 	{
+		console.log(object);
+
 		object.castShadow = true;
 		object.materials = mat;
 
