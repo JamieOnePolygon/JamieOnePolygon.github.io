@@ -138,11 +138,16 @@ h1#card-name
 {
 	position: absolute;
 	bottom: 0;
+	left: 47.75%;
 
-	width: 166px;
-	height: 230px;
+	width: 7.5%;
+	height: 20%;
+}
 
-	background-image: url("/content/sprites/fingerprint.png");
+#fingerprint
+{
+	width: 100%;
+
 }
 
 #scan-again
