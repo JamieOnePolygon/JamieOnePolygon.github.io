@@ -78,8 +78,8 @@ function createObject()
 	{
 		console.log(object);
 
-		object.castShadow = true;
-		object.materials = mat;
+		object.children[0].castShadow = true;
+		object.children[0].materials = mat;
 
 		//object.geometry.bufferNeedsUpdate = true;
 		//object.geometry.uvsNeedUpdate = true;
