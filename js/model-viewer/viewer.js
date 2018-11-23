@@ -69,7 +69,7 @@ function createObject()
 	scannedCard = getCardDetails();
 
 	//var mat = new THREE.MeshStandardMaterial( {color: 0xff0000 });
-	var mat = new THREE.MeshBasicMaterial({color: 0xff0000});
+	var mat = new THREE.MeshBasicMaterial({color: 0x000000});
 	mat.wireframe = true;
 
 	// Creating a FBX Model Loader object in prerperation for loading a mesh
@@ -77,7 +77,7 @@ function createObject()
 	loader.load(scannedCard.filePath, function(object)
 	{
 		object.castShadow = true;
-		object.material = mat;
+		object.materials = mat;
 		object.name = "Mesh Display";
 
 		scene.add(object);
