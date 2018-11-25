@@ -1,0 +1,11 @@
+#scan-target
+{
+	position: absolute;
+
+	top: 45%;
+	bottom: 45%;
+	left: 45%;
+	right: 45%;
+
+	border: 2px dashed white;
+}

@@ -174,7 +174,7 @@ function deployCard()
 	//setInterval(open('/index.html'), 1500);
 }
 
-document.getElementById("scan-again").addEventListener('click', function()
+document.getElementById("back-button").addEventListener('click', function()
 {
 	open('webar.html', '_self');
 });
