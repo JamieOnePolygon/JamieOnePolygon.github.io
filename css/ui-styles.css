@@ -1,0 +1,44 @@
+#scan
+{
+	position: absolute;
+	bottom: 0;
+	left: 46%;
+
+	width: 7.5%;
+	height: 20%;
+	margin-bottom: 1%;
+
+	border: 1px dashed transparent;
+}
+
+#scan:hover
+{
+	background-color: rgba(10, 10, 10, 0.8);
+
+	border: 1px dashed white;
+}
+
+#scan-tag
+{
+	position: absolute;
+	top: 0;
+
+	width: 100%;
+
+	margin: 0px;
+	margin-top: 10px;
+
+	text-align: center;
+	font-family: monospace;
+	font-weight: bold;
+	font-size: large;
+}
+
+#scan-fingerprint
+{
+	position: absolute;
+	width: : 65%;
+
+	bottom: 4%;
+	left: 17.5%;
+}

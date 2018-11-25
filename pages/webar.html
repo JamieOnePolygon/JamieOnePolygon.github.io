@@ -41,6 +41,21 @@
 	</script>
 
 	<body>
+		<!-- To keep the file clean, we are going to hold all of the UI in this div -->
+		<div id="overlay-ui">
+			<!-- A static image in the center of the screen as a image to tell the user where to position
+				the marker -->
+			<div id="scan-target"></div>
+
+			<!-- Button to start scanning for the marker -->
+			<div id="scan">
+				<p id="scan-tag">SCAN NOW</p>
+				<img id="scan-fingerprint" src="/content/sprites/fingerprint.png">
+			</div>
+		</div>
+
+		<!-- This is what handles the AR Image detection. We need to find a way to stop the detection before the user
+			presses a button. -->
 		<a-scene embedded arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3; sourceType: webcam; trackingMethod: best; debugUIEnabled: false;'>
 
 				<!-- Tracking the default Hiro Pattern and showing a Cube

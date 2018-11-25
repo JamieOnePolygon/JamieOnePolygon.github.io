@@ -2,6 +2,8 @@ body
 {
 	font-family: Arial;
 	color: white;
+
+	overflow: hidden;
 }
 
 h1#card-name
@@ -96,51 +98,6 @@ h1#card-name
 	margin: 10px;
 	margin-top: 65px;
 	margin-right: 0px;
-}
-
-#deploy
-{
-	position: absolute;
-	bottom: 0;
-	left: 46%;
-
-	width: 7.5%;
-	height: 20%;
-	margin-bottom: 1%;
-
-	border: 1px dashed transparent;
-}
-
-#deploy:hover
-{
-	background-color: rgba(10, 10, 10, 0.8);
-
-	border: 1px dashed white;
-}
-
-#deploy-tag
-{
-	position: absolute;
-	top: 0;
-
-	width: 100%;
-
-	margin: 0px;
-	margin-top: 10px;
-
-	text-align: center;
-	font-family: monospace;
-	font-weight: bold;
-	font-size: x-large;
-}
-
-#fingerprint
-{
-	position: absolute;
-	height: 75%;
-
-	bottom: 4%;
-	left: 12.5%;
 }
 
 #scan-again
