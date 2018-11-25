@@ -100,28 +100,6 @@ h1#card-name
 	margin-right: 0px;
 }
 
-#scan-again
-{
-	position: absolute;
-	left: 0;
-	bottom: 0;
-
-	width: 10%;
-	height: 10%;
-
-	margin-left: 15px;
-	margin-bottom: 15px;
-
-	border: 1px dashed transparent;
-}
-
-#scan-again:hover
-{
-	background-color: rgba(10, 10, 10, 0.8);
-
-	border: 1px dashed white;
-}
-
 #back
 {
 	position: absolute;
