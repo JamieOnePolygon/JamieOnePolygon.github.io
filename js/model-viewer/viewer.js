@@ -154,7 +154,7 @@ function animateObject()
 	}
 }
 
-document.getElementById("deploy").addEventListener('click', deployCard);
+document.getElementById("scan").addEventListener('click', deployCard);
 
 function deployCard()
 {
