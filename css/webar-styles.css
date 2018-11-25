@@ -1,5 +1,11 @@
 #overlay-ui
 {
+	position: absolute;
+	width: -webkit-fill-available;
+	height: -webkit-fill-available;
+
+	top: 0;
+
 	z-index: 100;
 }
 
@@ -33,4 +39,5 @@
 	min-height: 5%;
 
 	margin: 0;
+	margin-top: 5px;
 }
