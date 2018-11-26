@@ -132,6 +132,11 @@ camera.lookAt(0, 50, 0);
 // Update Loop
 function animate()
 {
+	if(!mesh)
+	{
+		mesh = scene.getObjectByName("Mesh Display");
+	}
+
 	requestAnimationFrame(animate);
 
 	//camera.lookAt((0, 0, 0));
@@ -147,10 +152,6 @@ function animateObject()
 	if (mesh) 
 	{
 		mesh.rotation.y += 0.005;
-	}
-	else 
-	{
-		mesh = scene.getObjectByName("Mesh Display");
 	}
 }
 
