@@ -174,7 +174,7 @@ function spawnCardText(message, parameters)
 	texture.needsUpdate = true;
 
 	var spriteMaterial = new THREE.SpriteMaterial( 
-		{ map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
+		{ map: texture, useScreenCoordinates: false} );
 	var sprite = new THREE.Sprite( spriteMaterial );
 	sprite.scale.set(100,50,1.0);
 	return sprite;	
