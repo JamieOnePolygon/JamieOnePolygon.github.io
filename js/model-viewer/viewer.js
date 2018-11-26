@@ -242,8 +242,8 @@ function animate()
 	//camera.lookAt((0, 0, 0));
 	animateObject();
 
-	composer.render();
-	//renderer.render(scene, camera);
+	//composer.render();
+	renderer.render(scene, camera);
 }
 
 animate();
