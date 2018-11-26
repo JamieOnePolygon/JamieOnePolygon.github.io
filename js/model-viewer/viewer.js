@@ -2,6 +2,7 @@
 var scene;			
 var camera;
 var renderer;
+var composer;
 
 var mesh;
 
@@ -37,6 +38,8 @@ function setupScene()
 	renderer.setSize(window.innerWidth, window.innerHeight);
 
 	lightScene();
+
+	setupPostProcessing();
 }
 
 function lightScene()
@@ -58,6 +61,21 @@ function lightScene()
 	scene.add(light);
 }
 
+function setupPostProcessing()
+{
+	composer = new THREE.EffectComposer(renderer);
+	composer.addPass(new THREE.RenderPass(scene, camera));
+
+	var effect = new THREE.ShaderPass(THREE.DotSceenShader);
+	effect.uniforms['scale'].value = 4;
+	composer.addPass(effect);
+
+	var effect = new THREE.ShaderPass(THREE.RGBShiftShader);
+	effect.uniforms['amount'].value = 0.0015;
+	effect.renderToScreen = true;
+
+	composer.addPass(effect);
+}
 
 setupScene();
 
@@ -140,7 +158,7 @@ function animate()
 	requestAnimationFrame(animate);
 
 	//camera.lookAt((0, 0, 0));
-	animateObject();
+	//animateObject();
 
 	renderer.render(scene, camera);
 }
