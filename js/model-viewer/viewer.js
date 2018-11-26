@@ -142,7 +142,7 @@ function spawnCardText(message, parameters)
 	//var spriteAlignment = parameters.hasOwnProperty("alignment") ?
 	//	parameters["alignment"] : THREE.SpriteAlignment.topLeft;
 
-	var spriteAlignment = THREE.SpriteAlignment.topLeft;
+	//var spriteAlignment = THREE.SpriteAlignment.topLeft;
 		
 
 	var canvas = document.createElement('canvas');
