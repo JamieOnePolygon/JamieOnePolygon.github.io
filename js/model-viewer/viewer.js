@@ -15,13 +15,18 @@ function setupScene()
 	// Creating a new THREE Scene
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color(0xa0a0a0);
-	scene.fog = new THREE.Fog(0xa0a0a0, 200, 1000);
+	//scene.fog = new THREE.Fog(0xa0a0a0, 200, 1000);
 
 	//Creating a plane which the objects sit on, and a grid efect
 	var ground =  new THREE.Mesh( new THREE.PlaneBufferGeometry( 3000, 3000 ), new THREE.MeshStandardMaterial( { color: 0x000000 } ) );
 	ground.rotation.x = - Math.PI / 2;
 	ground.receiveShadow = true;
 	scene.add( ground );
+
+	var grid = new THREE.GridHelper(2000, 20, 0x707070, 0x707070);
+	grid.material.opacity = 0.2;
+	grid.material.transparency = true;
+	scene.add(grid);
 
 	// Calculating the Aspect Ratio of the current window and creating a new
 	// perspective camera.
