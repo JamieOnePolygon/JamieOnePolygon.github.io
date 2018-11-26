@@ -160,7 +160,8 @@ function animate()
 	//camera.lookAt((0, 0, 0));
 	//animateObject();
 
-	renderer.render(scene, camera);
+	composer.render();
+	//renderer.render(scene, camera);
 }
 
 animate();
