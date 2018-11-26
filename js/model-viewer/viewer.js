@@ -180,7 +180,7 @@ function spawnCardText(message, parameters)
 	return sprite;	
 }
 
-function roundedRect(ctx, x, y, x, h, r)
+function roundedRect(ctx, x, y, w, h, r)
 {
 	ctx.beginPath();
     ctx.moveTo(x+r, y);
