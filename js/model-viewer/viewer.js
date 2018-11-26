@@ -62,7 +62,7 @@ function setupPostProcessing()
 	composer.addPass(new THREE.RenderPass(scene, camera));
 
 	var effect = new THREE.ShaderPass(THREE.DotScreenShader);
-	effect.uniforms['scale'].value = 1;
+	effect.uniforms['scale'].value = 16;
 	composer.addPass(effect);
 
 	var effect = new THREE.ShaderPass(THREE.RGBShiftShader);
