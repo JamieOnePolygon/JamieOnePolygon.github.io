@@ -199,9 +199,7 @@ function createDescriptionAnnotation()
 
 function updateDescriptionAnnotation()
 {
-	var verts = scene.getObjectByName("Geometry").geometry.vertices;
-
-	var position = verts[608].clone();
+	var position = new THREE.Vector3(0, 50, 0);
 	var canvas = renderer.domElement;
 
 	position.project(camera);
