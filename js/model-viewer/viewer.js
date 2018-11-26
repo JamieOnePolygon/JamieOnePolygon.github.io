@@ -107,13 +107,12 @@ function createObject()
 		scene.add(object);
 
 		console.log("Created object " + scannedCard.name);
-	});
 
-	var desc = spawnCardText("THIS IS A TEST");
+			var desc = spawnCardText("THIS IS A TEST");
 	desc.position = object.children[0].geometry.vertices[36].clone().multiplyScalar(2);
 	scene.add(desc);
+	});
 
-	spawnCardText();
 
 	document.getElementById("card-name").innerHTML = scannedCard.name;
 	document.getElementById("card-price").innerHTML = 'Price: $' + scannedCard.cost;
