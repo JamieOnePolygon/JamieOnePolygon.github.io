@@ -62,7 +62,7 @@ function setupPostProcessing()
 	composer.addPass(new THREE.RenderPass(scene, camera));
 
 	var effect = new THREE.ShaderPass(THREE.DotScreenShader);
-	effect.uniforms['scale'].value = 10;
+	effect.uniforms['scale'].value = 1;
 	composer.addPass(effect);
 
 	var effect = new THREE.ShaderPass(THREE.RGBShiftShader);
@@ -153,7 +153,7 @@ function animate()
 	requestAnimationFrame(animate);
 
 	//camera.lookAt((0, 0, 0));
-	//animateObject();
+	animateObject();
 
 	composer.render();
 	//renderer.render(scene, camera);
