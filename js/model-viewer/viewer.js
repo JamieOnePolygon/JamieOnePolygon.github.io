@@ -1,15 +1,18 @@
 // Declaring a few global variables we'll need.
-var scene;			
+var scene;						// Holds all of the three.js objects.		
 var camera;
-var renderer;
-var composer;
+var renderer;					// Used to render out the view from the camera
+var composer;					// This is used to render with FX.
 
+// Decalring an storing variables to objects such as the scanned mesh, and the annotations which we
+// want displayed around them.
 var mesh;
 
 // THE JSON DATA
 var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/control/animations/Notification_Anim.FBX","name": "Notification Alert","color": "0x800000","description": "All phones now display a notification for when there is a call from outside of the company.","objective": "This is a test objective","cost": 300, "level": 0},{"id": 1,"filePath": "/content/models/control/Ports_Blocked_02.fbx","name": "Ports Blocked","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1}]}';
 var scannedCard;
 
+// Used to setup the THREE.js scene.
 function setupScene()
 {
 	// Creating a new THREE Scene
@@ -39,9 +42,15 @@ function setupScene()
 
 	lightScene();
 
-	//setupPostProcessing();
+
+	// Setting the Camera position
+	camera.position.z = 175;
+	camera.position.y = 200;
+
+	camera.lookAt(0, 50, 0);
 }
 
+// Creates the light for the scene, called from setupScene
 function lightScene()
 {
 	//Creating a directional light and adding it to the scene.
@@ -61,27 +70,12 @@ function lightScene()
 	scene.add(light);
 }
 
-function setupPostProcessing()
-{
-	composer = new THREE.EffectComposer(renderer);
-	composer.addPass(new THREE.RenderPass(scene, camera));
-
-	var effect = new THREE.ShaderPass(THREE.DotScreenShader);
-	effect.uniforms['scale'].value = 8;
-	composer.addPass(effect);
-
-	var effect = new THREE.ShaderPass(THREE.RGBShiftShader);
-	effect.uniforms['amount'].value = 0.0015;
-	effect.renderToScreen = true;
-
-	composer.addPass(effect);
-}
-
 setupScene();
 
 // Adding the renderer to the body of our HTML page.
 document.body.appendChild(renderer.domElement);
 
+// Creates a new Object3D with the mesh corresponding to the card we scanned.
 function createObject()
 {
 	scannedCard = getCardDetails();
@@ -99,103 +93,19 @@ function createObject()
 		object.children[0].castShadow = true;
 		object.children[0].material = mat;
 
-		//object.geometry.bufferNeedsUpdate = true;
-		//object.geometry.uvsNeedUpdate = true;
-
 		object.name = "Mesh Display";
 
 		scene.add(object);
-
-		console.log("Created object " + scannedCard.name);
-
-		var desc = spawnCardText("THIS IS A TEST");
-		desc.position = object.children[0].geometry.vertices[608].clone().multiplyScalar(2);
-		scene.add(desc);
 	});
 
+	createDescriptionAnnotation();
 
 	document.getElementById("card-name").innerHTML = scannedCard.name;
 	document.getElementById("card-price").innerHTML = 'Price: $' + scannedCard.cost;
 	document.getElementById("card-level").innerHTML = 'Card Level: ' + scannedCard.level;
 }
 
-function spawnCardText(message, parameters)
-{
-	if ( parameters === undefined ) parameters = {};
-	
-	var fontface = parameters.hasOwnProperty("fontface") ? 
-		parameters["fontface"] : "Arial";
-	
-	var fontsize = parameters.hasOwnProperty("fontsize") ? 
-		parameters["fontsize"] : 18;
-	
-	var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
-		parameters["borderThickness"] : 4;
-	
-	var borderColor = parameters.hasOwnProperty("borderColor") ?
-		parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
-	
-	var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
-		parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
-
-	//var spriteAlignment = parameters.hasOwnProperty("alignment") ?
-	//	parameters["alignment"] : THREE.SpriteAlignment.topLeft;
-
-	//var spriteAlignment = THREE.SpriteAlignment.topLeft;
-		
-
-	var canvas = document.createElement('canvas');
-	var context = canvas.getContext('2d');
-	context.font = "Bold " + fontsize + "px " + fontface;
-    
-	// get size data (height depends only on font size)
-	var metrics = context.measureText( message );
-	var textWidth = metrics.width;
-	
-	// background color
-	context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
-								  + backgroundColor.b + "," + backgroundColor.a + ")";
-	// border color
-	context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
-								  + borderColor.b + "," + borderColor.a + ")";
-
-	context.lineWidth = borderThickness;
-	roundRect(context, borderThickness/2, borderThickness/2, 100 + borderThickness, 100 + borderThickness, 6);
-	// 1.4 is extra height factor for text below baseline: g,j,p,q.
-	
-	// text color
-	context.fillStyle = "rgba(0, 0, 0, 1.0)";
-
-	context.fillText( message, borderThickness, fontsize + borderThickness);
-	
-	// canvas contents will be used for a texture
-	var texture = new THREE.Texture(canvas) 
-	texture.needsUpdate = true;
-
-	var spriteMaterial = new THREE.SpriteMaterial( 
-		{ map: texture, useScreenCoordinates: false} );
-	var sprite = new THREE.Sprite( spriteMaterial );
-	sprite.scale.set(100,50,1.0);
-	return sprite;	
-}
-
-function roundRect(ctx, x, y, w, h, r)
-{
-	ctx.beginPath();
-    ctx.moveTo(x+r, y);
-    ctx.lineTo(x+w-r, y);
-    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-    ctx.lineTo(x+w, y+h-r);
-    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-    ctx.lineTo(x+r, y+h);
-    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-    ctx.lineTo(x, y+r);
-    ctx.quadraticCurveTo(x, y, x+r, y);
-    ctx.closePath();
-    ctx.fill();
-	ctx.stroke();  
-}
-
+// Retrieves the card details from the cardData JSON. 
 function getCardDetails()
 {
 	var match;
@@ -223,12 +133,6 @@ function getCardDetails()
 
 createObject();
 
-// Setting the Camera position
-camera.position.z = 175;
-camera.position.y = 200;
-
-camera.lookAt(0, 50, 0);
-
 // Update Loop
 function animate()
 {
@@ -238,12 +142,10 @@ function animate()
 	}
 
 	requestAnimationFrame(animate);
-
-	//camera.lookAt((0, 0, 0));
 	animateObject();
-
-	//composer.render();
 	renderer.render(scene, camera);
+
+	updateDescriptionAnnotation();
 }
 
 animate();
@@ -255,8 +157,6 @@ function animateObject()
 		mesh.rotation.y += 0.005;
 	}
 }
-
-document.getElementById("scan").addEventListener('click', deployCard);
 
 function deployCard()
 {
@@ -275,6 +175,45 @@ function deployCard()
 
 	//setInterval(open('/index.html'), 1500);
 }
+
+// Methods for creating and updating the annotations
+function createDescriptionAnnotation()
+{
+	var number = new THREE.CanvasTexture(document.getElementById("descLabel"));
+
+	var material = new THREE.SpriteMaterial(
+	{
+		map: number,
+		alphaTest: 0.5,
+		transparent: true;
+		depthTest: true;
+		depthWrite: true;
+	});
+
+	var sprite = new THREE.Sprite(material);
+	sprite.position.set(0, 0, 0);
+	sprite.scale.set(60, 60, 1);
+
+	scene.add(sprite);
+}
+
+function updateDescriptionAnnotation()
+{
+	var position = mesh.geometry.vertices[608].clone();
+	var canvas = renderer.domElement;
+
+	position.project(camera);
+
+	vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
+	vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
+
+	var annotation = document.getElementById("desc");
+	annotation.style.top = `${vector.y}px`;
+	annotation.style.left = `${vector.x}px`;
+}
+
+// HERE WE HAVE SOME EVENT HANDLERS
+document.getElementById("scan").addEventListener('click', deployCard);
 
 document.getElementById("back-button").addEventListener('click', function()
 {
