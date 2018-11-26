@@ -11,6 +11,8 @@ body
 {
 	position: absolute;
 
-	width: inherit;
-	height: inherit;
+	max-height: 100vh;
+	max-width: 100%;
+
+	margin: auto;
 }
