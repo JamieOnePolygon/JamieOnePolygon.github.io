@@ -53,6 +53,7 @@
 				<p id="scan-text">SCAN HERE</p>
 			</div>
 
+			<!-- Just a back button -->
 			<div id="back-button">
 				<img id="back" src="/content/sprites/backbutton.png">
 			</div>
@@ -70,7 +71,7 @@
 
 				<!-- Tracking the default Hiro Pattern and showing a Cube
 					 This marker is set up to emit events using the registerevents attribute -->
-				<a-marker id='0' preset='hiro' registerevents>
+				<a-marker id='0' type='pattern' url='https://jamieonepolygon.github.io/Patterns/TestPattern.patt' registerevents>
 					<a-box position='0 0.5 0' color='red'></a-box>
 				</a-marker>
 
