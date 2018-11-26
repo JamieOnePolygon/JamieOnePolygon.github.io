@@ -185,9 +185,9 @@ function createDescriptionAnnotation()
 	{
 		map: number,
 		alphaTest: 0.5,
-		transparent: true;
-		depthTest: true;
-		depthWrite: true;
+		transparent: true,
+		depthTest: true,
+		depthWrite: true
 	});
 
 	var sprite = new THREE.Sprite(material);
