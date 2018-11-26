@@ -199,7 +199,9 @@ function createDescriptionAnnotation()
 
 function updateDescriptionAnnotation()
 {
-	var position = mesh.geometry.vertices[608].clone();
+	var verts = scene.getObjectByName("Geometry").geometry.vertices;
+
+	var position = verts[608].clone();
 	var canvas = renderer.domElement;
 
 	position.project(camera);
