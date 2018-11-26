@@ -23,11 +23,6 @@ function setupScene()
 	ground.receiveShadow = true;
 	scene.add( ground );
 
-	var grid = new THREE.GridHelper(2000, 20, 0x707070, 0x707070);
-	grid.material.opacity = 0.2;
-	grid.material.transparency = true;
-	scene.add(grid);
-
 	// Calculating the Aspect Ratio of the current window and creating a new
 	// perspective camera.
 	var aspect = window.innerWidth / window.innerHeight;
@@ -67,7 +62,7 @@ function setupPostProcessing()
 	composer.addPass(new THREE.RenderPass(scene, camera));
 
 	var effect = new THREE.ShaderPass(THREE.DotScreenShader);
-	effect.uniforms['scale'].value = 4;
+	effect.uniforms['scale'].value = 10;
 	composer.addPass(effect);
 
 	var effect = new THREE.ShaderPass(THREE.RGBShiftShader);
