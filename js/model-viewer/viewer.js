@@ -199,7 +199,7 @@ function createDescriptionAnnotation()
 
 function updateDescriptionAnnotation()
 {
-	var position = new THREE.Vector3(0, 50, 0);
+	var vector = new THREE.Vector3(0, 50, 0);
 	var canvas = renderer.domElement;
 
 	position.project(camera);
