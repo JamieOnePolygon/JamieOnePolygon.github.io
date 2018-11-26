@@ -108,9 +108,9 @@ function createObject()
 
 		console.log("Created object " + scannedCard.name);
 
-			var desc = spawnCardText("THIS IS A TEST");
-	desc.position = object.children[0].geometry.vertices[36].clone().multiplyScalar(2);
-	scene.add(desc);
+		var desc = spawnCardText("THIS IS A TEST");
+		desc.position = object.children[0].geometry.vertices[608].clone().multiplyScalar(2);
+		scene.add(desc);
 	});
 
 
@@ -160,7 +160,7 @@ function spawnCardText(message, parameters)
 								  + borderColor.b + "," + borderColor.a + ")";
 
 	context.lineWidth = borderThickness;
-	roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
+	roundRect(context, borderThickness/2, borderThickness/2, 100 + borderThickness, 100 + borderThickness, 6);
 	// 1.4 is extra height factor for text below baseline: g,j,p,q.
 	
 	// text color
