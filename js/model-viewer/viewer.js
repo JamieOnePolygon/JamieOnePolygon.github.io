@@ -66,7 +66,7 @@ function setupPostProcessing()
 	composer = new THREE.EffectComposer(renderer);
 	composer.addPass(new THREE.RenderPass(scene, camera));
 
-	var effect = new THREE.ShaderPass(THREE.DotSceenShader);
+	var effect = new THREE.ShaderPass(THREE.DotScreenShader);
 	effect.uniforms['scale'].value = 4;
 	composer.addPass(effect);
 
