@@ -3,6 +3,8 @@ body
 	font-family: 'Roboto';
 	color: white;
 
+	letter-spacing: 2px;
+
 	overflow: hidden;
 }
 
@@ -41,6 +43,7 @@ h1#card-name
 {
 	position: absolute;
 	width: 50%;
+	margin-top: 10px;
 	margin-left: 15px;
 }
 
@@ -50,6 +53,7 @@ h1#card-name
 	width: 50%;
 	left: 48%;
 	margin-right: 1%;
+	margin-top: 10px;
 
 	text-align: right;
 }
