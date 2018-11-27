@@ -1,9 +1,16 @@
 body 
 {
-	font-family: Arial;
+	font-family: 'Roboto';
 	color: white;
 
 	overflow: hidden;
+}
+
+h1
+{
+	font-family: bahnschrift;
+	font-weight: bold;
+	font-size: 67px;
 }
 
 h1#card-name
