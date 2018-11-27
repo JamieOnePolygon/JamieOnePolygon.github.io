@@ -8,6 +8,13 @@ body
 	overflow: hidden;
 }
 
+h1
+{
+	font-family: bahnschrift;
+	font-weight: bold;
+	font-size: 40px;
+}
+
 #scan
 {
 	position: absolute;

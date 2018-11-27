@@ -1,20 +1,3 @@
-body 
-{
-	font-family: 'Roboto';
-	color: white;
-
-	letter-spacing: 2px;
-
-	overflow: hidden;
-}
-
-h1
-{
-	font-family: bahnschrift;
-	font-weight: bold;
-	font-size: 67px;
-}
-
 h1#card-name
 {
 	text-align: center;
