@@ -98,7 +98,7 @@ function createObject()
 		scene.add(object);
 	});
 
-	createDescriptionAnnotation();
+	//createDescriptionAnnotation();
 
 	document.getElementById("card-name").innerHTML = scannedCard.name;
 	document.getElementById("card-price").innerHTML = 'Price: $' + scannedCard.cost;
@@ -145,7 +145,7 @@ function animate()
 	animateObject();
 	renderer.render(scene, camera);
 
-	updateDescriptionAnnotation();
+	//updateDescriptionAnnotation();
 }
 
 animate();
