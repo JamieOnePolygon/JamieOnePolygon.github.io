@@ -74,6 +74,7 @@
 		var result = results.results[0];
 
 		// Here we want to now tell the web browser to navigate to a new web page to display the image.
+		open(result.item.url);
 
 		alert("Result found?");
 	};
