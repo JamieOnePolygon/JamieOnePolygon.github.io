@@ -154,7 +154,7 @@ function animate()
 
 	mixers.forEach(function(mixer)
 	{
-		mixer.update(clock.getDelta());
+		mixer.update(clock.getDelta() * 60);
 	});
 
 	requestAnimationFrame(animate);
