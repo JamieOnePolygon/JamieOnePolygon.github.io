@@ -158,7 +158,7 @@ function animate()
 
 	mixers.forEach(function(mixer)
 	{
-		mixer.update(1 / 60);
+		mixer.update(clock.getDelta());
 	});
 
 	renderer.render(scene, camera);
