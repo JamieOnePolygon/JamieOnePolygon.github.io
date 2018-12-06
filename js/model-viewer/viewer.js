@@ -13,7 +13,7 @@ var mesh;
 var mixers = [];
 
 // THE JSON DATA
-var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/control/animations/SmishingAnim.FBX","name": "Notification Alert","color": "0x800000","description": "All phones now display a notification for when there is a call from outside of the company.","objective": "This is a test objective","cost": 300, "level": 0},{"id": 1,"filePath": "/content/models/control/Ports_Blocked_02.fbx","name": "Ports Blocked","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1}]}';
+var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/control/animations/VishingAnim.FBX","name": "Notification Alert","color": "0x800000","description": "All phones now display a notification for when there is a call from outside of the company.","objective": "This is a test objective","cost": 300, "level": 0},{"id": 1,"filePath": "/content/models/control/Ports_Blocked_02.fbx","name": "Ports Blocked","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1}]}';
 var scannedCard;
 
 // Used to setup the THREE.js scene.
