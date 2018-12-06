@@ -4,12 +4,16 @@ var camera;
 var renderer;					// Used to render out the view from the camera
 var composer;					// This is used to render with FX.
 
+var clock = new THREE.Clock();
+
 // Decalring an storing variables to objects such as the scanned mesh, and the annotations which we
 // want displayed around them.
 var mesh;
 
+var mixers = [];
+
 // THE JSON DATA
-var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/control/animations/Notification_Anim.FBX","name": "Notification Alert","color": "0x800000","description": "All phones now display a notification for when there is a call from outside of the company.","objective": "This is a test objective","cost": 300, "level": 0},{"id": 1,"filePath": "/content/models/control/Ports_Blocked_02.fbx","name": "Ports Blocked","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1}]}';
+var cardDetails = '{ "cards":[{"id": 0,"filePath": "/content/models/control/animations/VhishingAnim.FBX","name": "Notification Alert","color": "0x800000","description": "All phones now display a notification for when there is a call from outside of the company.","objective": "This is a test objective","cost": 300, "level": 0},{"id": 1,"filePath": "/content/models/control/Ports_Blocked_02.fbx","name": "Ports Blocked","color": "0x800000","description": "This is a test description.","objective": "This is a test objective","cost": 100000, "level": 1}]}';
 var scannedCard;
 
 // Used to setup the THREE.js scene.
@@ -86,6 +90,7 @@ function createObject()
 
 	// Creating a FBX Model Loader object in prerperation for loading a mesh
 	var loader = new THREE.FBXLoader();
+
 	loader.load(scannedCard.filePath, function(object)
 	{
 		console.log(object);
@@ -94,6 +99,12 @@ function createObject()
 		object.children[0].material = mat;
 
 		object.name = "Mesh Display";
+
+		object.mixer = new THREE.AnimationMixer(object);
+		mixers.push(object.mixer);
+
+		var action = object.mixer.clipAction(object.animations[0]);
+		action.play();
 
 		scene.add(object);
 	});
@@ -141,8 +152,13 @@ function animate()
 		mesh = scene.getObjectByName("Mesh Display");
 	}
 
+	mixers.forEach(function(mixer)
+	{
+		mixer.update(clock.getDelta());
+	});
+
 	requestAnimationFrame(animate);
-	animateObject();
+	//animateObject();
 	renderer.render(scene, camera);
 
 	//updateDescriptionAnnotation();
