@@ -103,7 +103,7 @@ function createObject()
 		object.mixer = new THREE.AnimationMixer(object);
 		mixers.push(object.mixer);
 
-		var action = object.mixer.clipAction(object.animations[1]);
+		var action = object.mixer.clipAction(object.animations[2]);
 		action.play();
 
 		scene.add(object);
