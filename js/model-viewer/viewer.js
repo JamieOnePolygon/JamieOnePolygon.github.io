@@ -152,13 +152,15 @@ function animate()
 		mesh = scene.getObjectByName("Mesh Display");
 	}
 
+	requestAnimationFrame(animate);
+	//animateObject();
+
+
 	mixers.forEach(function(mixer)
 	{
 		mixer.update(clock.getDelta() * 60);
 	});
-
-	requestAnimationFrame(animate);
-	//animateObject();
+	
 	renderer.render(scene, camera);
 
 	//updateDescriptionAnnotation();
