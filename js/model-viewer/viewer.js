@@ -158,9 +158,9 @@ function animate()
 
 	mixers.forEach(function(mixer)
 	{
-		mixer.update(clock.getDelta() * 60);
+		mixer.update(clock.getDelta());
 	});
-	
+
 	renderer.render(scene, camera);
 
 	//updateDescriptionAnnotation();
